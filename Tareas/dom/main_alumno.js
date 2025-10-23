@@ -79,29 +79,33 @@ btnEj2n2.addEventListener('click', function () {
 
 // TODO: 1. Crear función para cuando entra el ratón
 //         - Cambiar backgroundColor a '#e7f5ff'
-const contenido3 = document.querySelector('#contenido3');
-contenido3.addEventListener('mouseover', function () {
-   contenido3.style.backgroundColor = '#e7f5ff';
-});
-contenido.addEventListener('mouseover', function () {
-   contenido.style.backgroundColor = '#e7f5ff';
-});
-
 
 // TODO: 2. Crear función para cuando sale el ratón
 //         - Restaurar backgroundColor a ''
 
-contenido3.addEventListener('mouseout', function () {
-   contenido3.style.backgroundColor = '';
-});
-contenido.addEventListener('mouseout', function () {
-   contenido.style.backgroundColor = '';
-});
 // TODO: 3. Crear función para aplicar eventos hover a un párrafo
 //         - Usar addEventListener para 'mouseover' y 'mouseout'
 
 // TODO: 4. Aplicar hover a todos los párrafos existentes inicialmente
+const contenido3 = document.getElementById('contenido3');
+const parrafos_Ej1 = contenido.getElementsByTagName('p');
+const parrafos_Ej3 = contenido3.getElementsByTagName('p');
 
+function aplicarHover(parrafo) {
+   parrafo.addEventListener('mouseover', function () {
+      parrafo.style.backgroundColor = '#e7f5ff';
+   });
+   parrafo.addEventListener('mouseout', function () {
+      parrafo.style.backgroundColor = '';
+   });
+}
+
+for (let i = 0; i < parrafos_Ej1.length; i++) {
+   aplicarHover(parrafos_Ej1[i]);
+}
+for (let i = 0; i < parrafos_Ej3.length; i++) {
+   aplicarHover(parrafos_Ej3[i]);
+}
 
 /* ======================================================
    TODO: Ejercicio 4 – Trabajar con inputs y formularios
