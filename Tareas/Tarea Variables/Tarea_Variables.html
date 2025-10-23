@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables, tipos de datos y conversiones</title>
+</head>
+<body>
+    <h1>Variables, tipos de datos y conversiones</h1>
+
+    <script>
+        // Declaramos las variables con distintos tipos de datos
+        let numero = 10;              // Numero entero
+        let texto = "Hola";           // Cadena de texto
+        let esVerdadero = false;      // Valor booleano
+        let vacio = null;             // Valor nulo
+        let sinDefinir;               // Valor sin asignar
+
+        console.log("Tipos de datos");
+        console.log("numero:", typeof numero);              // Esperamos: "number"
+        console.log("texto:", typeof texto);                // Esperamos: "string"
+        console.log("esVerdadero:", typeof esVerdadero);    // Esperamos: "boolean"
+        console.log("vacio:", typeof vacio);                // Esperamos: "object"
+        console.log("sinDefinir:", typeof sinDefinir);      // Esperamos: "undefined"
+
+        // Ejemplos de conversiones de tipos
+        console.log("\n=== Conversiones de tipos ===");
+
+        // Numero a cadena
+        let numeroComoTexto = String(123);
+        console.log("String(123) =", numeroComoTexto, "| tipo:", typeof numeroComoTexto);
+        // Esperamos que el número 123 se convierta a texto "123"
+
+        // Cadena a numero
+        let textoComoNumero = Number("123");
+        console.log('Number("123") =', textoComoNumero, "| tipo:", typeof textoComoNumero);
+        // Esperamos que la cadena "123" se convierta al numero 123
+
+        // Booleanos
+        let falsoDesdeCero = Boolean(0);
+        console.log("Boolean(0) =", falsoDesdeCero);
+        // Esperamos false (0 se considera falso)
+
+        let verdaderoDesdeTexto = Boolean("texto");
+        console.log('Boolean("texto") =', verdaderoDesdeTexto);
+        // Esperamos true (cualquier texto no vacio es verdadero)
+
+        // Ejemplos adicionales
+        let vacioComoNumero = Number(""); 
+        console.log('Number("") =', vacioComoNumero, "| tipo:", typeof vacioComoNumero);
+        // Esperamos 0, porque una cadena vacía se interpreta como cero
+
+        let textoInvalido = Number("hola");
+        console.log('Number("hola") =', textoInvalido);
+        // Esperamos NaN
+        // Hola no se  puede convertir a numero
+
+        console.log("\nFin del programa.");
+    </script>
+</body>
+</html>

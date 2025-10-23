@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Encabezado del documento: configuración básica y enlaces a estilos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultima Hora - Gaming News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Index_css.css">
+</head>
+
+<body>
+    <!-- Barra superior de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="Index.html"><i class="fas fa-newspaper fa-1x opacity-95"></i> Gaming
+                News</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="Index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ultima_hora.html">Ultima hora</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+                <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de bienvenida o cabecera principal -->
+    <section class="bg-info text-white py-5" style="margin-top: 56px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold">Noticias mas recientes</h1>
+                    <p class="lead">Las noticias mas impactantes del mes</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-light text-dark px-3 py-2">+5 Noticias</span>
+                        <span class="badge bg-light text-dark px-3 py-2">5 Años Informando</span>
+                        <span class="badge bg-light text-dark px-3 py-2">Informamos 24/7</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <i class="fas fa-newspaper fa-10x opacity-75"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenedor principal del contenido -->
+    <div class="container my-5">
+
+        <!-- Migas de pan o ruta de navegación -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="Index.html" class="text-decoration-none">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: rgb(255, 255, 255);">Ultima Hora
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Botón para volver arriba -->
+        <button class="btn btn-dark position-fixed bottom-0 start-0 m-3" onclick="window.scrollTo(0,0)">
+            Volver
+        </button>
+
+        <!-- Bloque de tarjetas de noticias -->
+        <section class="mb-5">
+            <div class="row">
+                <!-- Tarjeta 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-header bg-gradient bg-primary text-white text-center py-4">
+                            <i class="fas fa-gamepad fa-4x mb-3"></i>
+                            <h4 class="card-title mb-0">Todo sobre RockStar Games</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">RockStar decide atrasar la entrega de GTA VI otros 3 años, "por si
+                                acaso"</p>
+                            <img src="imagenes/RockStar.jpeg" class="img-fluid rounded mb-3" alt="RockStar">
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#webDevModal">
+                                    Ver más <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-header bg-gradient bg-primary text-white text-center py-4">
+                            <i class="fas fa-bolt fa-4x mb-3"></i>
+                            <h4 class="card-title mb-0">NVIDIA anuncia RetroBoost</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">NVIDIA lanza 'RetroBoost', una GPU orientada a emulación y juegos
+                                clásicos.</p>
+                            <img src="imagenes/nvidia.png" class="img-fluid rounded mb-3" alt="NVIDIA RetroBoost">
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nvidiaModal">
+                                    Ver más <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-header bg-gradient bg-dark text-white text-center py-4">
+                            <i class="fas fa-trophy fa-4x mb-3"></i>
+                            <h4 class="card-title mb-0">Nebula Drift rompe récords</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">El indie español 'Nebula Drift' alcanza el nº1 de ventas en plataformas
+                                digitales.</p>
+                            <img src="imagenes/nebula.jpg" class="img-fluid rounded mb-3 d-block mx-auto" alt="Nebula Drift">
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nebulaModal">
+                                    Ver más <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navegación por páginas -->
+        <ul class="pagination justify-content-end mb-5">
+            <li class="page-item disabled"><a class="page-link" href="#"
+                    style="background-color: rgb(26, 25, 25);">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="ultima_hora.html" style="background-color: black;">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="ultima_hora_2.html" style="background-color: black;">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="ultima_hora_2.html"
+                    style="background-color: black;">Next</a></li>
+        </ul>
+
+        <!-- Planes de suscripción -->
+        <section class="mb-5">
+            <h2 class="text-center mb-5">Planes de Suscripción</h2>
+            <div class="row">
+                <!-- Plan gratuito -->
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow">
+                        <div class="card-header bg-light text-center py-4">
+                            <h5 class="card-title">Gratis</h5>
+                            <h2>€0<small class="opacity-75">/mes</small></h2>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Alertas destacadas
+                                    (email)</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Acceso público a
+                                    artículos</li>
+                                <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Contenido exclusivo</li>
+                                <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Alertas en tiempo real
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid"> <button class="btn btn-outline-dark"
+                                    style="color: white; border-color: #bb86fc;">Elegir Plan</button> </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Plan premium -->
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow">
+                        <div class="card-header bg-primary text-white text-center py-4">
+                            <h5 class="card-title">Premium</h5>
+                            <h2>€3.99<small class="opacity-75">/mes</small></h2>
+                            <span class="badge bg-warning">Más Popular</span>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Alertas en tiempo real
+                                    (email + push)</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Boletín diario</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Artículos sin anuncios
+                                </li>
+                                <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Acceso anticipado a
+                                    exclusivas</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark" style="color: white; border-color: #bb86fc;">Elegir
+                                    Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Plan pro -->
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow">
+                        <div class="card-header bg-dark text-white text-center py-4">
+                            <h5 class="card-title">Pro</h5>
+                            <h2>€9.99<small class="opacity-75">/mes</small></h2>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Alertas prioritarias</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Resúmenes personalizados
+                                </li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Acceso anticipado a
+                                    exclusivas</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Reportajes especiales
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark" style="color: white; border-color: #bb86fc;">Elegir
+                                    Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aviso emergente de confirmación -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="planToast" class="toast align-items-center text-white bg-success border-0" role="alert"
+                aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">¡Acabas de seleccionar un plan!</div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                        aria-label="Cerrar"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Script del aviso emergente -->
+        <script>
+            document.querySelectorAll('button.btn.btn-outline-dark').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const toastEl = document.getElementById('planToast');
+                    const toast = new bootstrap.Toast(toastEl);
+                    toast.show();
+                });
+            });
+        </script>
+
+        <!-- Sección de opiniones de usuarios -->
+        <section class="mb-5">
+            <h2 class="text-center mb-5">Lo que Dicen Nuestros Clientes</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card border-0 shadow-lg">
+                            <div class="card-body text-center py-5">
+                                <i class="fas fa-quote-left fa-3x text-white mb-3"></i>
+                                <p class="lead">"Gaming News mejoró nuestra comunidad de jugadores. Muy profesionales."
+                                </p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div>
+                                        <h6 class="mb-0">María González</h6>
+                                        <small class="text-muted">CEO, GamingStudio</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card border-0 shadow-lg">
+                            <div class="card-body text-center py-5">
+                                <i class="fas fa-quote-left fa-3x text-white mb-3"></i>
+                                <p class="lead">"La app aumentó la retención de usuarios. Recomendados."</p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div>
+                                        <h6 class="mb-0">Carlos Ruiz</h6>
+                                        <small class="text-muted">Director, PlayLabs</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Sección final con llamada a la acción -->
+        <section class="bg-info text-white rounded p-5 text-center">
+            <h2>¿Quieres estar al día con el mundo gaming?</h2>
+            <p class="lead">Suscríbete y recibe las últimas noticias, lanzamientos y rumores del gaming en tiempo real
+            </p>
+            <button class="btn btn-light btn-lg me-2" data-bs-toggle="modal" data-bs-target="#contactModal">
+                <i class="fas fa-envelope me-2"></i>Contactanos Ahora
+            </button>
+            <button onclick="alert('Has activado una alerta')" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-bell me-2"></i>Activar Alertas
+            </button>
+        </section>
+    </div>
+
+    <!-- Ventana emergente de contacto -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title"><i class="fas fa-headset me-2"></i>Contactar con Gaming News</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!-- Formulario de contacto -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" class="form-control" placeholder="Tu nombre gamer o real">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" placeholder="tu@email.com">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Red Social o Gamertag</label>
+                                <input type="text" class="form-control" placeholder="@TuUsuario / SteamID / PSN ID">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Motivo del Contacto</label>
+                                <select class="form-select">
+                                    <option selected>Selecciona una opción</option>
+                                    <option value="noticia">Enviar Noticia o Rumor</option>
+                                    <option value="colaboracion">Colaboración o Entrevista</option>
+                                    <option value="publicidad">Publicidad o Patrocinio</option>
+                                    <option value="soporte">Soporte Técnico</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tema Relacionado</label>
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="tema" id="tema1">
+                                <label class="btn btn-outline-primary" for="tema1">eSports</label>
+                                <input type="radio" class="btn-check" name="tema" id="tema2">
+                                <label class="btn btn-outline-primary" for="tema2">Lanzamientos</label>
+                                <input type="radio" class="btn-check" name="tema" id="tema3">
+                                <label class="btn btn-outline-primary" for="tema3">Reviews</label>
+                                <input type="radio" class="btn-check" name="tema" id="tema4">
+                                <label class="btn btn-outline-primary" for="tema4">Eventos</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mensaje</label>
+                            <textarea class="form-control" rows="4"
+                                placeholder="Cuéntanos tu noticia, propuesta o comentario sobre el mundo gaming..."></textarea>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="terms">
+                            <label class="form-check-label" for="terms">
+                                Acepto los términos y condiciones y la política de privacidad de Gaming News
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-info">
+                        <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventanas emergentes con información detallada de cada noticia -->
+
+    <!-- Ventana con detalles de RockStar Games -->
+    <div class="modal fade" id="webDevModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <!-- Encabezado con título e icono -->
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title"><i class="fas fa-gamepad me-2"></i>Todo sobre RockStar Games</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Cuerpo del mensaje con la noticia completa -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <img src="imagenes/RockStar.jpeg" class="img-fluid rounded mb-3 d-block mx-auto" alt="RockStar">
+                            <p><strong>RockStar ha anunciado un nuevo retraso en GTA VI:</strong> según el comunicado
+                                oficial, la compañía pospone el lanzamiento otros 3 años para asegurar la calidad,
+                                estabilidad y experiencia final del juego.</p>
+                            <p>Motivos señalados: pulido de mecánicas, pruebas de rendimiento a gran escala y ajustes
+                                para compatibilidad con múltiples plataformas. La desarrolladora prioriza una entrega
+                                sin compromisos sobre fechas apresuradas.</p>
+                            <p>Reacciones: la comunidad muestra opiniones divididas entre frustración y comprensión;
+                                analistas esperan impacto en planificación comercial y marketing.</p>
+                        </div>
+                        <!-- Columna lateral con datos breves -->
+                        <div class="col-md-4">
+                            <div class="bg-dark p-3 rounded">
+                                <h6>Detalles rápidos</h6>
+                                <p class="mb-1"><strong>Última actualización:</strong></p>
+                                <p class="small text-light mb-2">14 Septiembre 2025</p>
+                                <p class="mb-1"><strong>Fuente:</strong></p>
+                                <p class="small text-light mb-2">Comunicado oficial de RockStar</p>
+                                <hr>
+                                <h6>Acciones</h6>
+                                <button class="btn btn-primary w-100 mb-2">Compartir noticia</button>
+                                <a href="Index.html" class="btn btn-outline-dark w-100">Volver al inicio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Botón inferior para cerrar -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana con detalles de NVIDIA -->
+    <div class="modal fade" id="nvidiaModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <!-- Encabezado con título -->
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title"><i class="fas fa-microchip me-2"></i>NVIDIA anuncia RetroBoost</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Cuerpo principal con texto e imagen -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <img src="imagenes/nvidia.png" class="img-fluid rounded mb-3 d-block mx-auto"
+                                alt="NVIDIA RetroBoost">
+                            <p><strong>NVIDIA presenta RetroBoost:</strong> una GPU diseñada para ofrecer excelente
+                                compatibilidad y rendimiento en emulación y títulos retro, con mejoras en filtrado de
+                                texturas y latencia reducida.</p>
+                            <p>Características destacadas: shaders optimizados para render 2D/3D clásico, perfiles
+                                preconfigurados para emuladores populares y modos de baja latencia para pantallas CRT
+                                simuladas.</p>
+                            <p>Impacto: promotores de la escena retro celebran la iniciativa; fabricantes de hardware y
+                                desarrolladores de emuladores ya están probando perfiles oficiales.</p>
+                        </div>
+                        <!-- Información lateral complementaria -->
+                        <div class="col-md-4">
+                            <div class="bg-dark p-3 rounded">
+                                <h6>Detalles rápidos</h6>
+                                <p class="mb-1"><strong>Última actualización:</strong></p>
+                                <p class="small text-light mb-2">10 Octubre 2025</p>
+                                <p class="mb-1"><strong>Fuente:</strong></p>
+                                <p class="small text-light mb-2">Nota de prensa NVIDIA</p>
+                                <hr>
+                                <h6>Acciones</h6>
+                                <button class="btn btn-primary w-100 mb-2">Compartir noticia</button>
+                                <a href="Index.html" class="btn btn-outline-dark w-100">Volver al inicio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pie del modal con botón de cierre -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana con detalles del juego Nebula Drift -->
+    <div class="modal fade" id="nebulaModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <!-- Título y cierre -->
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title"><i class="fas fa-rocket me-2"></i>Nebula Drift alcanza el nº1</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Contenido con imagen y texto -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <img src="imagenes/nebula.jpg" class="img-fluid rounded mb-3 d-block mx-auto" alt="Nebula Drift">
+                            <p><strong>'Nebula Drift' se corona como éxito indie:</strong> el título español combina
+                                narrativa y carreras espaciales, logrando cifras récord en descargas.</p>
+                            <p>Razones del éxito: buena campaña en redes, apoyo de creadores de contenido y mejoras
+                                posteriores al lanzamiento.</p>
+                            <p>Consecuencias: el estudio planea ampliar su equipo y trabajar en futuras expansiones.</p>
+                        </div>
+                        <!-- Lado derecho con resumen y botones -->
+                        <div class="col-md-4">
+                            <div class="bg-dark p-3 rounded">
+                                <h6>Detalles rápidos</h6>
+                                <p class="mb-1"><strong>Última actualización:</strong></p>
+                                <p class="small text-light mb-2">12 Octubre 2025</p>
+                                <p class="mb-1"><strong>Fuente:</strong></p>
+                                <p class="small text-light mb-2">Distribuidora IndieWave</p>
+                                <hr>
+                                <h6>Acciones</h6>
+                                <button class="btn btn-primary w-100 mb-2">Compartir noticia</button>
+                                <a href="Index.html" class="btn btn-outline-dark w-100">Volver al inicio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Botón de cierre -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana para iniciar sesión -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Cabecera del login -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Cuerpo con formulario de usuario -->
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="tu@email.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Contraseña</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="remember">
+                            <label class="form-check-label" for="remember">Recordarme</label>
+                        </div>
+                    </form>
+                </div>
+                <!-- Botones del final del login -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página general -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Nombre y logo -->
+                <div class="col-md-6">
+                    <h5><i class="fas fa-newspaper fa-1x opacity-95"></i> Gaming News</h5>
+                </div>
+                <!-- Enlaces de navegación -->
+                <div class="col-md-3">
+                    <h6>Enlaces</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="Index.html" class="text-light text-decoration-none">Inicio</a></li>
+                        <li><a href="ultima_hora.html" class="text-light text-decoration-none">Ultima Hora</a></li>
+                        <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+                <!-- Redes sociales -->
+                <div class="col-md-3">
+                    <h6>Síguenos</h6>
+                    <a href="#" class="text-light me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-3">
+            <!-- Derechos de autor -->
+            <div class="text-center">
+                <small>&copy; 2025 Gaming News. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enlace al script de Bootstrap para que todo funcione correctamente -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

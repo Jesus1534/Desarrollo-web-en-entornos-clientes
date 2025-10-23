@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Tema 5 - Práctica DOM - Alumno</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- CSS personalizado -->
+    <link href="custom.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container my-5">
+        <h1 class="display-4 text-primary mb-4">Tema 5 - Manipulación del DOM</h1>
+
+        <!-- Ejercicio 1 - EJEMPLO COMPLETADO -->
+        <div id="ej1" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 1 - Selectores y modificación</h2>
+            </div>
+            <div class="card-body">
+                <div id="contenido" class="mb-3">
+                    <p class="mb-2">Primer párrafo de ejemplo.</p>
+                    <p class="mb-2">Segundo párrafo de ejemplo.</p>
+                    <p class="mb-2">Tercer párrafo de ejemplo.</p>
+                </div>
+                <button id="btn-ej1" class="btn btn-primary">Aplicar cambios del Ejercicio 1</button>
+            </div>
+        </div>
+
+        <!-- TODO: Ejercicio 2 - Crear y eliminar nodos -->
+        <!-- 
+        INSTRUCCIONES PARA EL ALUMNO:
+        - Crear una card similar a la del Ejercicio 1
+        - Incluir dos botones: "Añadir párrafo" y "Eliminar último párrafo"
+        - Usar los IDs: btn-add y btn-remove
+        - La card debe tener el ID: ej2
+        -->
+
+        <div id="ej2" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 2 - Crear y eliminar nodos</h2>
+            </div>
+            <div class="card-body">
+                <div id="contenido2" class="mb-3">
+                    <p class="mb-2">Primer párrafo de ejemplo.</p>
+                </div>
+                <button id="btn-add" class="btn btn-danger">Añadir parrafo</button>
+                <button id="btn-remove" class="btn btn-primary">Eliminar parrafo</button>
+            </div>
+        </div>
+
+        <!-- TODO: Ejercicio 3 - Manejo de eventos -->
+        <!-- 
+        INSTRUCCIONES PARA EL ALUMNO:
+        - Crear una card con información sobre el ejercicio
+        - Solo necesita texto explicativo, sin botones
+        - La card debe tener el ID: ej3
+        -->
+
+        <div id="ej3" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 3 - Manejo de eventos</h2>
+            </div>
+            <div class="card-body">
+                <div id="contenido3" class="mb-3">
+                    <p class="mb-2">En el ejercicio 3 nos comentan que tenemos que escribir un texto explicativo sin
+                        botones.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TODO: Ejercicio 4 - Inputs y actualización dinámica -->
+        <!-- 
+        INSTRUCCIONES PARA EL ALUMNO:
+        - Crear una card con un formulario
+        - Incluir: label, input (id="nuevoTexto"), button (id="btn-cambiar")
+        - Incluir mensaje de error oculto (id="msg-ej4") con clases "text-danger d-none"
+        - La card debe tener el ID: ej4
+        -->
+        <div id="ej4" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 4 - Inputs y actualización dinámica</h2>
+            </div>
+            <div class="card-body">
+                <div id="contenido4" class="mb-3">
+                    <label for="nuevoTexto" class="form-label">Ingrese nuevo texto para el párrafo:</label>
+                    <p class="mb-2">Parrafo de Ejemplo EJ4</p>
+                    <input type="text" id="nuevoTexto" class="form-control mb-2" />
+                    <button id="btn-cambiar" class="btn btn-primary mb-2">Cambiar texto</button>
+                    <div id="msg-ej4" class="text-danger d-none">Error: El campo no puede estar vacío.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TODO: Ejercicio 5 - Lista dinámica -->
+        <!-- 
+        INSTRUCCIONES PARA EL ALUMNO:
+        - Crear una card con formulario para tareas
+        - Incluir: input (id="tareaInput"), dos botones (id="btn-tarea" e "id="btn-borrar-completadas")
+        - Incluir una lista vacía (id="listaTareas") con clases "list-unstyled border rounded p-3"
+        - La card debe tener el ID: ej5
+        -->
+        <div id="ej5" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 5 - Lista dinámica</h2>
+            </div>
+            <div class="card-body">
+                <div id="contenido5" class="mb-3">
+                    <input type="text" id="tareaInput" class="form-control mb-2" placeholder="Nueva tarea" />
+                    <button id="btn-tarea" class="btn btn-primary mb-2">Agregar tarea</button>
+                    <button id="btn-borrar-completadas" class="btn btn-danger mb-2">Borrar completadas</button>
+                    <ul id="listaTareas" class="list-unstyled border rounded p-3">
+                        <!-- Las tareas se agregan aqui -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- TODO: Crear archivo main_alumno.js con la funcionalidad JavaScript -->
+    <script src="main_alumno.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Encabezado del documento: configuración básica y enlaces a estilos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultima Hora - Gaming News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Index_css.css">
+</head>
+
+<body>
+    <!-- Barra de navegación principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="Index.html"><i class="fas fa-newspaper fa-1x opacity-95"></i> Gaming
+                News</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="Index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ultima_hora.html">Ultima hora</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+                <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de presentación o cabecera visual -->
+    <section class="bg-info text-white py-5" style="margin-top: 56px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold">Noticias no tan recientes</h1>
+                    <p class="lead">Las noticias mas impactantes de los ultimos meses</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-light text-dark px-3 py-2">+5 Noticias</span>
+                        <span class="badge bg-light text-dark px-3 py-2">5 Años Informando</span>
+                        <span class="badge bg-light text-dark px-3 py-2">Informamos 24/7</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <i class="fas fa-newspaper fa-10x opacity-75"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenedor principal del contenido -->
+    <div class="container my-5">
+        <!-- Ruta de navegación o migas de pan -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">s
+                <li class="breadcrumb-item"><a href="Index.html" class="text-decoration-none">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: rgb(255, 255, 255);">Ultima Hora
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Boton para volver arriba -->
+        <button class="btn btn-dark position-fixed bottom-0 start-0 m-3" onclick="window.scrollTo(0,0)">
+            Volver
+        </button>
+
+
+        <!-- Seccion de noticias -->
+        <section class="mb-5">
+            <div class="row">
+                <!-- Tarjeta de noticia 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-header bg-gradient bg-secondary text-white text-center py-4">
+                            <i class="fas fa-playstation fa-4x mb-3"></i>
+                            <h4 class="card-title mb-0">Sony presenta PS5 Slim</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Sony anuncia una versión más compacta de PS5 con mejoras en disipación
+                                y consumo.</p>
+                            <img src="imagenes/ps5.png" class="img-fluid rounded mb-3" alt="PS5 Slim">
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ps5Modal">
+                                    Ver más <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de noticia 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-header bg-gradient bg-info text-white text-center py-4">
+                            <i class="fas fa-store fa-4x mb-3"></i>
+                            <h4 class="card-title mb-0">Steam renueva su interfaz</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Valve lanza una actualización visual y nuevas herramientas curatoriales
+                                en Steam.</p>
+                            <img src="imagenes/steam.png" class="img-fluid rounded mb-3" alt="Steam Update">
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#steamModal">
+                                    Ver más <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de noticia 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-header bg-gradient bg-success text-white text-center py-4">
+                            <i class="fas fa-seedling fa-4x mb-3"></i>
+                            <h4 class="card-title mb-0">Forestbound consigue financiación</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">'Forestbound' obtiene inversión para ampliar su mundo abierto y
+                                contenido narrativo.</p>
+                            <img src="imagenes/indie.png" class="img-fluid rounded mb-3" alt="Forestbound">
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#forestModal">
+                                    Ver más <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Paginacion -->
+        <ul class="pagination justify-content-end mb-5">
+            <li class="page-item disabled"><a class="page-link" href="#" style="background-color: black;">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="ultima_hora.html" style="background-color: black;">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="ultima_hora_2.html" style="background-color: black;">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="ultima_hora_2.html"
+                    style="background-color: rgb(26, 25, 25)">Next</a></li>
+        </ul>
+
+
+
+        <!-- Seccion de comentarios -->
+        <section class="mb-5">
+            <h2 class="text-center mb-5">Lo que Dicen Nuestros Clientes</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Opinión 1 -->
+                    <div class="carousel-item active">
+                        <div class="card border-0 shadow-lg">
+                            <div class="card-body text-center py-5">
+                                <i class="fas fa-quote-left fa-3x text-white mb-3"></i>
+                                <p class="lead">"Gaming News mejoró nuestra comunidad de jugadores. Muy profesionales."
+                                </p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div>
+                                        <h6 class="mb-0">María González</h6>
+                                        <small class="text-muted">CEO, GamingStudio</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Opinión 2 -->
+                    <div class="carousel-item">
+                        <div class="card border-0 shadow-lg">
+                            <div class="card-body text-center py-5">
+                                <i class="fas fa-quote-left fa-3x text-white mb-3"></i>
+                                <p class="lead">"La app aumentó la retención de usuarios. Recomendados."</p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div>
+                                        <h6 class="mb-0">Carlos Ruiz</h6>
+                                        <small class="text-muted">Director, PlayLabs</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Controles del carrusel -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Sección de promoción de contacto -->
+        <section class="bg-info text-white rounded p-5 text-center">
+            <h2>¿Quieres estar al día con el mundo gaming?</h2>
+            <p class="lead">Suscríbete y recibe las últimas noticias, lanzamientos y rumores del gaming en tiempo real
+            </p> <button class="btn btn-light btn-lg me-2" data-bs-toggle="modal" data-bs-target="#contactModal"> <i
+                    class="fas fa-envelope me-2"></i>Contactanos Ahora </button> <button
+                onclick="alert('Has activado una alerta')" class="btn btn-outline-light btn-lg"> <i
+                    class="fas fa-bell me-2"></i>Activar Alertas </button>
+        </section>
+    </div>
+
+    <!-- Ventana emergente de contacto -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title"><i class="fas fa-headset me-2"></i>Contactar con Gaming News</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" class="form-control" placeholder="Tu nombre gamer o real">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" placeholder="tu@email.com">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Red Social o Gamertag</label>
+                                <input type="text" class="form-control" placeholder="@TuUsuario / SteamID / PSN ID">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Motivo del Contacto</label>
+                                <select class="form-select">
+                                    <option selected>Selecciona una opción</option>
+                                    <option value="noticia">Enviar Noticia o Rumor</option>
+                                    <option value="colaboracion">Colaboración o Entrevista</option>
+                                    <option value="publicidad">Publicidad o Patrocinio</option>
+                                    <option value="soporte">Soporte Técnico</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tema Relacionado</label>
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="tema" id="tema1">
+                                <label class="btn btn-outline-primary" for="tema1">eSports</label>
+                                <input type="radio" class="btn-check" name="tema" id="tema2">
+                                <label class="btn btn-outline-primary" for="tema2">Lanzamientos</label>
+                                <input type="radio" class="btn-check" name="tema" id="tema3">
+                                <label class="btn btn-outline-primary" for="tema3">Reviews</label>
+                                <input type="radio" class="btn-check" name="tema" id="tema4">
+                                <label class="btn btn-outline-primary" for="tema4">Eventos</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mensaje</label>
+                            <textarea class="form-control" rows="4"
+                                placeholder="Cuéntanos tu noticia, propuesta o comentario sobre el mundo gaming..."></textarea>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="terms">
+                            <label class="form-check-label" for="terms">
+                                Acepto los términos y condiciones y la política de privacidad de Gaming News
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-info">
+                        <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventanas emergentes de cada noticia -->
+    <div class="modal fade" id="ps5Modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title"><i class="fas fa-playstation me-2"></i>Sony presenta PS5 Slim</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <img src="imagenes/ps5.png" class="img-fluid rounded mb-3 d-block mx-auto" alt="PS5 Slim">
+                            <p><strong>Sony anuncia PS5 Slim:</strong> versión más compacta de la consola con mejoras en
+                                disipación y consumo energético, manteniendo compatibilidad con todos los juegos de PS5.
+                            </p>
+                            <p>Características principales: chasis reducido un 20%, ventilación mejorada, fuente de
+                                alimentación optimizada y nuevo mando con batería de mayor duración.</p>
+                            <p>Lanzamiento y disponibilidad: modelo previsto para finales de 2025; Sony confirma
+                                producción escalonada para evitar roturas de stock.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-dark p-3 rounded">
+                                <h6>Detalles rápidos</h6>
+                                <p class="mb-1"><strong>Anuncio:</strong></p>
+                                <p class="small text-light mb-2">05 Octubre 2025</p>
+                                <p class="mb-1"><strong>Precio estimado:</strong></p>
+                                <p class="small text-light mb-2">€449 - €499</p>
+                                <hr>
+                                <h6>Acciones</h6>
+                                <button class="btn btn-primary w-100 mb-2">Compartir noticia</button>
+                                <a href="Index.html" class="btn btn-outline-dark w-100">Volver al inicio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="steamModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title"><i class="fas fa-store me-2"></i>Steam renueva su interfaz</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <img src="imagenes/steam.png" class="img-fluid rounded mb-3 d-block mx-auto" alt="Steam Update">
+                            <p><strong>Valve lanza actualización mayor de Steam:</strong> nueva interfaz centrada en
+                                descubrimiento de juegos, recomendaciones personalizadas y herramientas curatoriales
+                                mejoradas para creadores.</p>
+                            <p>Novedades: filtros avanzados en la tienda, secciones destacadas por creador, mejoras en
+                                rendimiento y un nuevo modo de biblioteca con opciones de organización renovadas.</p>
+                            <p>Impacto: la plataforma busca facilitar el descubrimiento de indies y mejorar la
+                                experiencia para usuarios con grandes bibliotecas.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-dark p-3 rounded">
+                                <h6>Detalles rápidos</h6>
+                                <p class="mb-1"><strong>Despliegue:</strong></p>
+                                <p class="small text-light mb-2">12 Octubre 2025</p>
+                                <p class="mb-1"><strong>Fuente:</strong></p>
+                                <p class="small text-light mb-2">Comunicado oficial Valve</p>
+                                <hr>
+                                <h6>Acciones</h6>
+                                <button class="btn btn-primary w-100 mb-2">Compartir noticia</button>
+                                <a href="Index.html" class="btn btn-outline-dark w-100">Volver al inicio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="forestModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title"><i class="fas fa-seedling me-2"></i>Forestbound consigue financiación</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <img src="imagenes/indie.png" class="img-fluid rounded mb-3 d-block mx-auto" alt="Forestbound">
+                            <p><strong>'Forestbound' obtiene inversión:</strong> el estudio independiente cierra una
+                                ronda semilla que permitirá ampliar su mundo abierto, contratar personal y desarrollar
+                                contenido narrativo adicional.</p>
+                            <p>Uso de fondos: ampliación del equipo, mejoras en arte y sonido, y expansión del contenido
+                                post-lanzamiento (DLC y soporte para más plataformas).</p>
+                            <p>Expectativas: el equipo planea lanzar nuevas áreas jugables y mejorar la rejugabilidad
+                                durante 2026.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-dark p-3 rounded">
+                                <h6>Detalles rápidos</h6>
+                                <p class="mb-1"><strong>Ronda cerrada:</strong></p>
+                                <p class="small text-light mb-2">08 Octubre 2025</p>
+                                <p class="mb-1"><strong>Inversores:</strong></p>
+                                <p class="small text-light mb-2">VentureSeed, IndieFund</p>
+                                <hr>
+                                <h6>Acciones</h6>
+                                <button class="btn btn-primary w-100 mb-2">Compartir noticia</button>
+                                <a href="Index.html" class="btn btn-outline-dark w-100">Volver al inicio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana de inicio de sesión -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="tu@email.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Contraseña</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="remember">
+                            <label class="form-check-label" for="remember">Recordarme</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-newspaper fa-1x opacity-95"></i> Gaming News</h5>
+                </div>
+                <div class="col-md-3">
+                    <h6>Enlaces</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="Index.html" class="text-light text-decoration-none">Inicio</a></li>
+                        <li><a href="ultima_hora.html" class="text-light text-decoration-none">Ultima Hora</a></li>
+                        <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Síguenos</h6>
+                    <a href="#" class="text-light me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <small>&copy; 2025 Gaming News. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enlace al script de Bootstrap para que todo funcione correctamente -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interacción básica en JavaScript</title>
+</head>
+<body>
+    
+    <p>Esto es una practica</p>
+    
+    <input class="boton" type="button" id="boton1" value="boton" onclick="boton1()"/>
+    <input class="boton" type="button" id="boton2" value="boton" onclick="boton2()"/>
+
+    <script>
+        function boton1() {
+            alert("Has pulsado el botón 1");
+            console.log("Consola del botón 1");
+        }
+        function boton2() {
+            alert("Pulsaste el boton 2");
+            console.log("Consola del botón 2");
+        }
+    </script>
+
+</body>
+</html>
+
+

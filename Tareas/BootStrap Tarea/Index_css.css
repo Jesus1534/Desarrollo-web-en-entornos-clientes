@@ -1,0 +1,228 @@
+/* --- Fondo y texto principal --- */
+/* Ajusta el color del fondo general, el tono del texto y el tipo de letra del sitio */
+body {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* --- Barra de navegación --- */
+/* Define los colores y estilos del menú principal y sus enlaces */
+.navbar {
+    background-color: #1c1c1c !important;
+}
+
+.navbar .navbar-brand {
+    color: #bb86fc !important;
+}
+
+.navbar .nav-link {
+    color: #e0e0e0 !important;
+}
+
+.navbar .nav-link.active {
+    color: #bb86fc !important;
+}
+
+.navbar .btn-outline-light {
+    border-color: #bb86fc !important;
+    color: #bb86fc !important;
+}
+
+.navbar .btn-outline-light:hover {
+    background-color: #bb86fc !important;
+    color: #121212 !important;
+}
+
+/* --- Sección principal o Hero Section --- */
+/* Configura el área de bienvenida: colores, bordes y botones */
+section.bg-info.text-white.rounded.p-5.text-center {
+    background-color: #1f1f1f !important;
+    color: #bb86fc !important;
+    border-radius: 1rem !important;
+    text-align: center !important;
+    padding: 3rem !important;
+}
+
+section.bg-info.text-white.rounded.p-5.text-center h2 {
+    color: #bb86fc !important;
+    margin-bottom: 1rem !important;
+}
+
+section.bg-info.text-white.rounded.p-5.text-center p.lead {
+    color: #e0e0e0 !important;
+}
+
+section.bg-info.text-white.rounded.p-5.text-center .btn-light {
+    background-color: #bb86fc !important;
+    color: #121212 !important;
+    border: 1px solid #bb86fc !important;
+}
+
+section.bg-info.text-white.rounded.p-5.text-center .btn-light:hover {
+    background-color: #9b4dff !important;
+    border-color: #9b4dff !important;
+    color: #121212 !important;
+}
+
+section.bg-info.text-white.rounded.p-5.text-center .btn-outline-light {
+    border-color: #bb86fc !important;
+    color: #bb86fc !important;
+}
+
+section.bg-info.text-white.rounded.p-5.text-center .btn-outline-light:hover {
+    background-color: #bb86fc !important;
+    color: #121212 !important;
+}
+
+/* --- Hero Sections generales --- */
+/* Aplica un formato similar a otras secciones destacadas del sitio */
+section.bg-info.text-white.py-5 {
+    background-color: #1f1f1f !important;
+    color: #bb86fc !important;
+}
+
+section.bg-info.text-white.py-5 h1,
+section.bg-info.text-white.py-5 p {
+    color: #bb86fc !important;
+}
+
+section.bg-info.text-white.py-5 .badge {
+    background-color: #2a2a2a !important;
+    color: #bb86fc !important;
+}
+
+section.bg-info.text-white.py-5 i.fas {
+    color: #bb86fc !important;
+    opacity: 0.75 !important;
+}
+
+/* --- Tarjetas o Cards --- */
+/* Define el estilo de las tarjetas informativas y los botones dentro de ellas */
+.card {
+    background-color: #1e1e1e !important;
+    border: 1px solid #333 !important;
+    color: #ffffff !important;
+}
+
+.card-header {
+    background-color: #2a2a2a !important;
+    color: #bb86fc !important;
+}
+
+.card .card-title,
+.card .card-text {
+    color: #ffffff !important;
+}
+
+.card .btn-primary {
+    background-color: #bb86fc !important;
+    border-color: #bb86fc !important;
+    color: #121212 !important;
+}
+
+.card .btn-primary:hover {
+    background-color: #9b4dff !important;
+    border-color: #9b4dff !important;
+    color: #121212 !important;
+}
+
+/* --- Efecto al pasar el ratón por las tarjetas de contacto --- */
+/* Hace que las tarjetas se eleven ligeramente al colocar el cursor encima */
+.contact-info-card {
+    transition: transform 0.3s ease;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- Preguntas frecuentes (FAQ) --- */
+/* Personaliza los botones y el fondo de las secciones de preguntas */
+.accordion-button {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #2a2a2a !important;
+    color: #bb86fc !important;
+}
+
+.accordion-body {
+    background-color: #1f1f1f !important;
+    color: #e0e0e0 !important;
+}
+
+/* --- Tablas de planes o comparaciones --- */
+/* Establece colores, bordes y efectos al pasar el ratón */
+.table {
+    color: #ffffff !important;
+    border: 2px solid #bb86fc !important;
+    border-collapse: collapse !important;
+}
+
+.table thead th {
+    background-color: #2a2a2a !important;
+    color: #bb86fc !important;
+    border: 1px solid #bb86fc !important;
+}
+
+.table tbody td {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+    border: 1px solid #333 !important;
+}
+
+.table tbody tr:hover td {
+    background-color: #2a1a2a !important;
+}
+
+/* --- Ventanas emergentes (Modal) --- */
+/* Define los colores de fondo y borde de las ventanas de información */
+.modal-content {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: #333 !important;
+}
+
+.btn-primary {
+    background-color: #bb86fc !important;
+    border-color: #bb86fc !important;
+}
+
+.btn-primary:hover {
+    background-color: #9b4dff !important;
+    border-color: #9b4dff !important;
+    color: #121212 !important;
+}
+
+/* --- Pie de página (Footer) --- */
+/* Ajusta los colores, enlaces y comportamiento del pie de la página */
+footer {
+    background-color: #1c1c1c !important;
+    color: #e0e0e0 !important;
+}
+
+footer a {
+    color: #bb86fc !important;
+}
+
+footer a:hover {
+    text-decoration: underline !important;
+}
+
+/* --- Enlaces generales --- */
+/* Colores base y efecto al pasar el cursor sobre los enlaces */
+a {
+    color: #bb86fc !important;
+}
+
+a:hover {
+    color: #9b4dff !important;
+    text-decoration: none !important;
+}

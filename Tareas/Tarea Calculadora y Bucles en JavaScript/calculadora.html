@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora y Bucles</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .badge {
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="text-center">Calculadora y Bucles</h2>
+        </div>
+        <div class="card-body">
+
+            <!-- Inputs -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="numero1" class="form-label">Número 1:</label>
+                    <input type="number" class="form-control" id="numero1">
+                </div>
+                <div class="col-md-6">
+                    <label for="numero2" class="form-label">Número 2:</label>
+                    <input type="number" class="form-control" id="numero2">
+                </div>
+            </div>
+
+            <!-- Operaciones -->
+            <div class="row mb-3">
+                <h4>Operaciones Básicas</h4>
+                <div class="col">
+                    <button onclick="operar('+')" class="btn btn-primary m-1">Sumar</button>
+                    <button onclick="operar('-')" class="btn btn-primary m-1">Restar</button>
+                    <button onclick="operar('*')" class="btn btn-primary m-1">Multiplicar</button>
+                    <button onclick="operar('/')" class="btn btn-primary m-1">Dividir</button>
+                    <button onclick="operar('^')" class="btn btn-primary m-1">Potencia</button>
+                    <button onclick="operar('%')" class="btn btn-primary m-1">Módulo</button>
+                </div>
+            </div>
+
+            <!-- Bucles con texto -->
+            <div class="row mb-3">
+                <h4>Bucles (Texto)</h4>
+                <div class="col">
+                    <button onclick="bucleTexto('for')" class="btn btn-success m-1">For (texto)</button>
+                    <button onclick="bucleTexto('while')" class="btn btn-success m-1">While (texto)</button>
+                    <button onclick="bucleTexto('dowhile')" class="btn btn-success m-1">Do While (texto)</button>
+                </div>
+            </div>
+
+            <!-- Bucles con badges -->
+            <div class="row mb-3">
+                <h4>Bucles (Badges)</h4>
+                <div class="col">
+                    <button onclick="bucleBadges('for')" class="btn btn-warning m-1">For (badges)</button>
+                    <button onclick="bucleBadges('while')" class="btn btn-warning m-1">While (badges)</button>
+                    <button onclick="bucleBadges('dowhile')" class="btn btn-warning m-1">Do While (badges)</button>
+                </div>
+            </div>
+
+            <!-- Boton de limpieza --> 
+            <div class="row mb-3">
+                <h4>Boton de Limpieza</h4>
+                <div class="col">
+                <button onclick="document.getElementById('resultado').innerHTML='';" class="btn btn-secondary m-1">Limpiar</button>
+                </div>
+            </div>
+
+            <!-- Resultado -->
+            <div class="row">
+                <div class="col">
+                    <h4>Resultado:</h4>
+                    <div id="resultado" class="border p-3 bg-light"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts para cada operacion-->
+    <script>
+        function operar(operador) {
+            const num1 = parseFloat(document.getElementById('numero1').value);
+            const num2 = parseFloat(document.getElementById('numero2').value);
+            let resultado = '';
+
+            if (isNaN(num1) || isNaN(num2)) {
+                resultado = 'Introduce dos números validos';
+            } else {
+                // Segun el boton pulsado realiza la operacion asignada
+                switch (operador) {
+                    case '+':
+                        resultado = `${num1} + ${num2} = ${num1 + num2}`;
+                        break;
+                    case '-':
+                        resultado = `${num1} - ${num2} = ${num1 - num2}`;
+                        break;
+                    case '*':
+                        resultado = `${num1} × ${num2} = ${num1 * num2}`;
+                        break;
+                    case '/':
+                        // Si el segundo numero es 0 no se puede dividir
+                        if (num2 === 0) {
+                            resultado = 'Error: No se puede dividir entre 0';
+                        } else {
+                            resultado = `${num1} ÷ ${num2} = ${num1 / num2}`;
+                        }
+                        break;
+                    case '^':
+                        resultado = `${num1} ^ ${num2} = ${Math.pow(num1, num2)}`;
+                        break;
+                    case '%':
+                        // Si el segundo numero es 0 no se puede hacer el modulo
+                        if (num2 === 0) {
+                            resultado = 'Error';
+                        } else {
+                            resultado = `${num1} % ${num2} = ${num1 % num2}`;
+                        }
+                        break;
+                }
+            }
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+
+        // Funciones para los bucles
+        function bucleTexto(tipo) {
+            const num = parseInt(document.getElementById('numero1').value);
+            let resultado = '';
+
+            if (isNaN(num) || num <= 0) {
+                resultado = 'Introduce un número valido en el Número 1';
+            } else {
+                switch (tipo) {
+                    case 'for':
+                        for (let i = 1; i <= num; i++) {
+                            resultado += `Repetición ${i}<br>`;
+                        }
+                        break;
+                    case 'while':
+                        let j = 1;
+                        while (j <= num) {
+                            resultado += `Repetición ${j}<br>`;
+                            j++;
+                        }
+                        break;
+                    case 'dowhile':
+                        let k = 1;
+                        do {
+                            resultado += `Repetición ${k}<br>`;
+                            k++;
+                        } while (k <= num);
+                        break;
+                }
+            }
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+
+        // Funciones para los bucles con badges
+        function bucleBadges(tipo) {
+            const num = parseInt(document.getElementById('numero1').value);
+            let resultado = '';
+
+            if (isNaN(num) || num <= 0) {
+                resultado = 'Introduce un número valido en el Número 1';
+            } else {
+                switch (tipo) {
+                    case 'for':
+                        for (let i = 1; i <= num; i++) {
+                            resultado += `<span class="badge bg-primary">Repetición ${i}</span>`;
+                        }
+                        break;
+                    case 'while':
+                        let j = 1;
+                        while (j <= num) {
+                            resultado += `<span class="badge bg-success">Repetición ${j}</span>`;
+                            j++;
+                        }
+                        break;
+                    case 'dowhile':
+                        let k = 1;
+                        do {
+                            resultado += `<span class="badge bg-warning">Repetición ${k}</span>`;
+                            k++;
+                        } while (k <= num);
+                        break;
+                }
+            }
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

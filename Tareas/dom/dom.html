@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+
+    <div id="div1">
+        <p id="p1">Párrafo 1</p>
+        <p id="p2">Párrafo 2</p>
+    </div>
+
+    <div id="test"></div>
+
+    <script>
+
+        // Creamos un nuevo elemento p
+        var para = document.createElement("p");
+
+        // Creamos un nodo de texto
+        var node = document.createTextNode("Párrafo 3");
+
+        // Añadimos el nodo de texto al elemento p
+        para.appendChild(node);
+
+        // Seleccionamos el div con id="div1" 
+        var element = document.getElementById("div1");
+
+        // Añadimos el nuevo párrafo al final del div
+        element.appendChild(para);
+
+
+        // Creamos un nuevo elemento p
+        var para = document.createElement("p");
+
+        // Creamos un nodo de texto con el contenido "Nuevo párrafo 1"
+        var node = document.createTextNode("Nuevo párrafo 1");
+
+        // Añadimos el nodo de texto al elemento p
+        para.appendChild(node);
+
+        // Seleccionamos el div con id="div1"
+        var parent = document.getElementById("div1");
+
+        // Seleccionamos el párrafo con id="p1"
+        var p1 = document.getElementById("p1");
+
+        // Seleccionamos el párrafo con id="p2"
+        var p2 = document.getElementById("p2");
+
+        // Reemplazamos p1 con el nuevo párrafo
+        parent.replaceChild(para, p1); // reemplazo p1
+
+        // Eliminamos p2 del DOM
+        parent.removeChild(p2); //borrado del párrafo 2
+
+
+        // Creamos un Map para guardar las notas de los alumnos
+        const notas = new Map();
+
+        // Añadimos alumnos y sus notas usando set
+        notas.set('Ana', 8.5);
+        notas.set('Luis', 7);
+        notas.set('Sofía', 9.2);
+
+        // Consultamos la nota de un alumno
+        console.log(notas.get('Luis')); // Muestra: 7
+
+        // Comprobamos si existe una nota para un alumno
+        console.log(notas.has('Ana')); // Muestra: true
+
+        // Recorremos todos los alumnos y sus notas
+        for (const [alumno, nota] of notas) {
+            console.log(`${alumno}: ${nota}`);
+        }
+
+
+        // Antes, se hacía así:
+        const w = window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientWidth;
+
+        const h = window.innerHeight || document.documentElement.clientHeight
+            || document.body.clientHeight;
+
+        // Ahora, se puede hacer así:
+        const w2 = window.innerWidth;
+        const h2 = window.innerHeight;
+
+        const valor = 'valorParaLaVentana';
+        window.open('https://davante.es/?value=' + valor);
+
+
+        document.getElementById("test").innerHTML =
+            "Ancho de la pantalla " + screen.width;
+
+        // Mostrar una alerta
+        window.alert("Alerta de ventana");
+
+        // Obtenemos la URL de la página actual
+        console.log(window.location);
+
+        // Cambiar la URL de la página actual
+        window.location.href = 'https://davante.es';
+
+
+
+    </script>
+
+</body>
+
+</html>

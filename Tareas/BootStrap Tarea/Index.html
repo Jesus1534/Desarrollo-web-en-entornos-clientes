@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Encabezado del documento: configuración básica y enlaces a estilos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Index_css.css">
+</head>
+
+<body>
+    <!-- Barra de navegación principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><i class="fas fa-newspaper fa-1x opacity-95"></i> Gaming News</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="Index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ultima_hora.html">Ultima hora</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+                <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección principal o hero -->
+    <section id="inicio" class="hero bg-info text-white py-5 mb-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold" style="margin-top: 4%;">Gaming News</h1>
+            <p>Página Web de noticias de última hora sobre juegos</p>
+            <button class="btn btn-outline-light btn-lg">Saber más</button>
+        </div>
+    </section>
+
+    <!-- Botón flotante para volver al inicio -->
+    <button class="btn btn-dark position-fixed bottom-0 start-0 m-3" onclick="window.scrollTo(0,0)">
+        Volver
+    </button>
+
+    <div class="container my-5">
+        <!-- Bloque de noticias destacadas (cards) -->
+        <section id="servicios" class="mb-5">
+            <h2 class=" mb-4">Nuestras noticias Insignia</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-header bg-primary text-white text-center">
+                            <i class="fas fa-server fa-3x mb-2"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Silksong rompió los servidores de Steam</h5>
+                            <p class="card-text">El pasado 14 de septiembre ocurrió un referente en la industria del
+                                gaming.
+                            </p>
+                            <div class="d-grid">
+                                <button class="btn btn-primary"
+                                    onclick="this.innerHTML='No hay mas que ver... Simplemente se rompieron los servers.'">Ver
+                                    más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-header bg-primary text-white text-center">
+                            <i class="fas fa-dollar-sign fa-3x mb-2"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">CDProject vende Cyberpunk a Ubisoft</h5>
+                            <p class="card-text">Uno de los juegos mejor valorados de todos los tiempos tiembla ante sus
+                                dueños.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-primary"
+                                    onclick="this.innerHTML='Imaginate ser comprado por Ubisoft... ya hay que estar mal.'">Ver
+                                    más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-header bg-primary text-white text-center">
+                            <i class="fas fa-fish fa-3x mb-2"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Antonio Recio quiere prohibir los gachas</h5>
+                            <p class="card-text">El 12 de Junio Antonio se reveló comunicando que estaba arto de perder
+                                el
+                                50/50.</p>
+                            <div class="d-grid">
+                                <button class="btn btn-primary"
+                                    onclick="this.innerHTML='Dijo, Palabras textuales: Ya van 180 tiradas y no me sale Miyabi.'">Ver
+                                    más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de preguntas frecuentes (accordion) -->
+        <section class="mb-5">
+            <h3>Preguntas Frecuentes</h3>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            ¿Qué tipo de noticias publica Gaming News?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Publicamos noticias frescas del mundo de los videojuegos: lanzamientos, parches, retrasos,
+                            movimientos de estudio, hardware y éxitos indies. Contenido verificado y actualizado varias
+                            veces al día.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            ¿Con qué frecuencia se actualiza la web?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            El equipo actualiza la portada en tiempo real: publicamos noticias y notas breves cada vez
+                            que
+                            hay novedades relevantes. Además mantenemos artículos más desarrollados durante el día.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            ¿Cómo envío una pista o noticia?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Usa el formulario de contacto (página "Contacto") para enviar pistas. Incluye fuentes,
+                            capturas
+                            o enlaces; el equipo comprobará la información antes de publicarla.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            ¿Puedo recibir alertas de noticias importantes?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Sí. Ofrecemos suscripciones por email y notificaciones push para alertas inmediatas sobre
+                            lanzamientos o noticias de última hora. Consulta la sección de suscripciones para más
+                            detalles.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabla de planes de suscripción -->
+        <section class="mb-5">
+            <h3>Suscripciones</h3>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Plan</th>
+                            <th>Precio</th>
+                            <th>Acceso a alertas</th>
+                            <th>Contenido exclusivo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gratis</td>
+                            <td>€0 / mes</td>
+                            <td>Alertas destacadas (email)</td>
+                            <td>Acceso público a artículos</td>
+                        </tr>
+                        <tr>
+                            <td>Premium</td>
+                            <td>€3.99 / mes</td>
+                            <td>Alertas en tiempo real (email + push)</td>
+                            <td>Boletín diario y artículos sin anuncios</td>
+                        </tr>
+                        <tr>
+                            <td>Pro</td>
+                            <td>€9.99 / mes</td>
+                            <td>Alertas prioritarias + resúmenes personalizados</td>
+                            <td>Acceso anticipado a exclusivas y reportajes especiales</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- Ventana modal de inicio de sesión -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="tu@email.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Contraseña</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="remember">
+                            <label class="form-check-label" for="remember">Recordarme</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-newspaper fa-1x opacity-95"></i> Gaming News</h5>
+                </div>
+                <div class="col-md-3">
+                    <h6>Enlaces</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="Index.html" class="text-light text-decoration-none">Inicio</a></li>
+                        <li><a href="ultima_hora.html" class="text-light text-decoration-none">Ultima Hora</a></li>
+                        <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Síguenos</h6>
+                    <a href="#" class="text-light me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <small>&copy; 2025 Gaming News. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enlace al script de Bootstrap para que todo funcione correctamente -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

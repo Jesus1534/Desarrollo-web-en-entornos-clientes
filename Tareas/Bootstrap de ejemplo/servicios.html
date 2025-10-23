@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - TechCorp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-laptop-code me-2"></i>TechCorp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+                <button class="btn btn-outline-light" data-bs-toggle="modal"
+                    data-bs-target="#contactModal">Contactar</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section for Services -->
+    <section class="bg-primary text-white py-5" style="margin-top: 56px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold">Nuestros Servicios</h1>
+                    <p class="lead">Soluciones tecnológicas completas para hacer crecer tu negocio</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-light text-dark px-3 py-2">+100 Proyectos</span>
+                        <span class="badge bg-light text-dark px-3 py-2">5 Años de Experiencia</span>
+                        <span class="badge bg-light text-dark px-3 py-2">24/7 Soporte</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <i class="fas fa-cogs fa-10x opacity-75"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Servicios</li>
+            </ol>
+        </nav>
+
+        <!-- Services Overview Cards -->
+        <section class="mb-5">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-header bg-gradient bg-primary text-white text-center py-4">
+                            <i class="fas fa-code fa-4x mb-3"></i>
+                            <h4 class="card-title mb-0">Desarrollo Web</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Creamos sitios web modernos, responsivos y optimizados para SEO.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Diseño Responsivo</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Optimización SEO</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Panel de Administración</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Hosting Incluido</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#webDevModal">
+                                    Ver Detalles <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-header bg-gradient bg-success text-white text-center py-4">
+                            <i class="fas fa-mobile-alt fa-4x mb-3"></i>
+                            <h4 class="card-title mb-0">Apps Móviles</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Desarrollo de aplicaciones nativas e híbridas para iOS y Android.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>iOS & Android</li>
+                                <li><i class="fas fa-check text-success me-2"></i>React Native / Flutter</li>
+                                <li><i class="fas fa-check text-success me-2"></i>API Integration</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Push Notifications</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#mobileDevModal">
+                                    Ver Detalles <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-header bg-gradient bg-warning text-dark text-center py-4">
+                            <i class="fas fa-cloud fa-4x mb-3"></i>
+                            <h4 class="card-title mb-0">Cloud Computing</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Soluciones en la nube para escalabilidad y alta disponibilidad.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>AWS / Azure / GCP</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Docker & Kubernetes</li>
+                                <li><i class="fas fa-check text-success me-2"></i>CI/CD Pipeline</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Monitoreo 24/7</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#cloudModal">
+                                    Ver Detalles <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-header bg-gradient bg-info text-white text-center py-4">
+                            <i class="fas fa-shield-alt fa-4x mb-3"></i>
+                            <h4 class="card-title mb-0">Ciberseguridad</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Protege tu negocio con nuestras soluciones de seguridad avanzadas.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Auditorías de Seguridad</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Pentesting</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Backup & Recovery</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Certificaciones ISO</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#securityModal">
+                                    Ver Detalles <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-header bg-gradient bg-dark text-white text-center py-4">
+                            <i class="fas fa-robot fa-4x mb-3"></i>
+                            <h4 class="card-title mb-0">IA & Machine Learning</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Implementamos soluciones de inteligencia artificial para automatizar
+                                procesos.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Chatbots Inteligentes</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Análisis Predictivo</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Computer Vision</li>
+                                <li><i class="fas fa-check text-success me-2"></i>NLP Processing</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#aiModal">
+                                    Ver Detalles <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-header bg-gradient bg-danger text-white text-center py-4">
+                            <i class="fas fa-chart-line fa-4x mb-3"></i>
+                            <h4 class="card-title mb-0">Consultoría IT</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Asesoramiento experto para optimizar tu infraestructura tecnológica.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Análisis de Procesos</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Arquitectura de Software</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Migración de Sistemas</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Formación de Equipos</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#consultingModal">
+                                    Ver Detalles <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Plans -->
+        <section class="mb-5">
+            <h2 class="text-center mb-5">Planes de Servicios</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow">
+                        <div class="card-header bg-light text-center py-4">
+                            <h5 class="card-title">Plan Básico</h5>
+                            <h2 class="text-primary">€499<small class="text-muted">/mes</small></h2>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>1 Proyecto Web</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>5GB Storage</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Soporte Email</li>
+                                <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Apps Móviles</li>
+                                <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Cloud Hosting</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-outline-primary">Elegir Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-primary shadow">
+                        <div class="card-header bg-primary text-white text-center py-4">
+                            <h5 class="card-title">Plan Profesional</h5>
+                            <h2>€999<small class="opacity-75">/mes</small></h2>
+                            <span class="badge bg-warning">Más Popular</span>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>3 Proyectos Web</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>50GB Storage</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Soporte 24/7</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>1 App Móvil</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Cloud Hosting</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-primary">Elegir Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow">
+                        <div class="card-header bg-dark text-white text-center py-4">
+                            <h5 class="card-title">Plan Enterprise</h5>
+                            <h2>€1999<small class="opacity-75">/mes</small></h2>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Proyectos Ilimitados</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>500GB Storage</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Soporte Prioritario</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Apps Móviles Ilimitadas
+                                </li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Infraestructura Dedicada
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <div class="d-grid">
+                                <button class="btn btn-dark">Elegir Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="mb-5">
+            <h2 class="text-center mb-5">Nuestro Proceso de Trabajo</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+                            style="width: 80px; height: 80px;">
+                            <h3 class="mb-0">1</h3>
+                        </div>
+                        <h5 class="mt-3">Análisis</h5>
+                        <p class="text-muted">Estudiamos tus necesidades y objetivos empresariales</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+                            style="width: 80px; height: 80px;">
+                            <h3 class="mb-0">2</h3>
+                        </div>
+                        <h5 class="mt-3">Planificación</h5>
+                        <p class="text-muted">Diseñamos la estrategia y arquitectura de la solución</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="bg-warning text-dark rounded-circle d-inline-flex align-items-center justify-content-center"
+                            style="width: 80px; height: 80px;">
+                            <h3 class="mb-0">3</h3>
+                        </div>
+                        <h5 class="mt-3">Desarrollo</h5>
+                        <p class="text-muted">Implementamos la solución con las mejores prácticas</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+                            style="width: 80px; height: 80px;">
+                            <h3 class="mb-0">4</h3>
+                        </div>
+                        <h5 class="mt-3">Entrega</h5>
+                        <p class="text-muted">Desplegamos y brindamos soporte continuo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Carousel -->
+        <section class="mb-5">
+            <h2 class="text-center mb-5">Lo que Dicen Nuestros Clientes</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card border-0 shadow-lg">
+                            <div class="card-body text-center py-5">
+                                <i class="fas fa-quote-left fa-3x text-primary mb-3"></i>
+                                <p class="lead">"TechCorp transformó completamente nuestra presencia digital. El equipo
+                                    es profesional y los resultados superaron nuestras expectativas."</p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="https://via.placeholder.com/60x60" class="rounded-circle me-3"
+                                        alt="Cliente">
+                                    <div>
+                                        <h6 class="mb-0">María González</h6>
+                                        <small class="text-muted">CEO, StartupTech</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card border-0 shadow-lg">
+                            <div class="card-body text-center py-5">
+                                <i class="fas fa-quote-left fa-3x text-success mb-3"></i>
+                                <p class="lead">"La aplicación móvil que desarrollaron ha aumentado nuestras ventas en
+                                    un 300%. Altamente recomendados."</p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="https://via.placeholder.com/60x60" class="rounded-circle me-3"
+                                        alt="Cliente">
+                                    <div>
+                                        <h6 class="mb-0">Carlos Ruiz</h6>
+                                        <small class="text-muted">Director, EcommercePlus</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="bg-primary text-white rounded p-5 text-center">
+            <h2>¿Listo para Comenzar tu Proyecto?</h2>
+            <p class="lead">Contacta con nosotros hoy mismo y recibe una consulta gratuita</p>
+            <button class="btn btn-light btn-lg me-2" data-bs-toggle="modal" data-bs-target="#contactModal">
+                <i class="fas fa-phone me-2"></i>Contactar Ahora
+            </button>
+            <button class="btn btn-outline-light btn-lg">
+                <i class="fas fa-calendar me-2"></i>Agendar Reunión
+            </button>
+        </section>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-envelope me-2"></i>Contactar con TechCorp</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" class="form-control" placeholder="Tu nombre">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" placeholder="tu@email.com">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Teléfono</label>
+                                <input type="tel" class="form-control" placeholder="+34 123 456 789">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Servicio de Interés</label>
+                                <select class="form-select">
+                                    <option selected>Selecciona un servicio</option>
+                                    <option value="web">Desarrollo Web</option>
+                                    <option value="mobile">Apps Móviles</option>
+                                    <option value="cloud">Cloud Computing</option>
+                                    <option value="security">Ciberseguridad</option>
+                                    <option value="ai">IA & Machine Learning</option>
+                                    <option value="consulting">Consultoría IT</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Presupuesto Estimado</label>
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="budget" id="budget1">
+                                <label class="btn btn-outline-primary" for="budget1">
+                                    < €5K</label>
+                                        <input type="radio" class="btn-check" name="budget" id="budget2">
+                                        <label class="btn btn-outline-primary" for="budget2">€5K - €15K</label>
+                                        <input type="radio" class="btn-check" name="budget" id="budget3">
+                                        <label class="btn btn-outline-primary" for="budget3">€15K - €50K</label>
+                                        <input type="radio" class="btn-check" name="budget" id="budget4">
+                                        <label class="btn btn-outline-primary" for="budget4">>€50K</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mensaje</label>
+                            <textarea class="form-control" rows="4"
+                                placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="terms">
+                            <label class="form-check-label" for="terms">
+                                Acepto los términos y condiciones y la política de privacidad
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Detail Modals -->
+    <!-- Web Development Modal -->
+    <div class="modal fade" id="webDevModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-code me-2"></i>Desarrollo Web</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h6>Tecnologías que Utilizamos:</h6>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-2">HTML5</span>
+                                <span class="badge bg-primary me-2">CSS3</span>
+                                <span class="badge bg-primary me-2">JavaScript</span>
+                                <span class="badge bg-primary me-2">React</span>
+                                <span class="badge bg-primary me-2">Vue.js</span>
+                                <span class="badge bg-primary me-2">Node.js</span>
+                            </div>
+                            <p>Desarrollamos sitios web modernos y funcionales que se adaptan a cualquier dispositivo.
+                                Nuestro enfoque se centra en la experiencia del usuario y el rendimiento.</p>
+                            <ul>
+                                <li>Diseño responsivo y mobile-first</li>
+                                <li>Optimización para motores de búsqueda (SEO)</li>
+                                <li>Integración con sistemas de gestión de contenido</li>
+                                <li>Comercio electrónico</li>
+                                <li>Mantenimiento y actualizaciones</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 rounded">
+                                <h6>Precios desde:</h6>
+                                <h4 class="text-primary">€500</h4>
+                                <p class="small text-muted">Incluye diseño, desarrollo y 1 mes de soporte</p>
+                                <hr>
+                                <h6>Tiempo de entrega:</h6>
+                                <p>2-6 semanas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Solicitar Presupuesto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Development Modal -->
+    <div class="modal fade" id="mobileDevModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title"><i class="fas fa-mobile-alt me-2"></i>Desarrollo de Apps Móviles</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h6>Plataformas y Tecnologías:</h6>
+                            <div class="mb-3">
+                                <span class="badge bg-success me-2">React Native</span>
+                                <span class="badge bg-success me-2">Flutter</span>
+                                <span class="badge bg-success me-2">Swift</span>
+                                <span class="badge bg-success me-2">Kotlin</span>
+                                <span class="badge bg-success me-2">Xamarin</span>
+                            </div>
+                            <p>Creamos aplicaciones móviles nativas e híbridas que ofrecen una experiencia de usuario
+                                excepcional en iOS y Android.</p>
+                            <ul>
+                                <li>Aplicaciones nativas para iOS y Android</li>
+                                <li>Apps híbridas multiplataforma</li>
+                                <li>Integración con APIs y servicios web</li>
+                                <li>Notificaciones push</li>
+                                <li>Publicación en App Store y Google Play</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 rounded">
+                                <h6>Precios desde:</h6>
+                                <h4 class="text-success">€2,000</h4>
+                                <p class="small text-muted">App básica para una plataforma</p>
+                                <hr>
+                                <h6>Tiempo de entrega:</h6>
+                                <p>6-16 semanas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success">Solicitar Presupuesto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add other modals for remaining services... -->
+    <!-- Cloud Computing Modal -->
+    <div class="modal fade" id="cloudModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-warning text-dark">
+                    <h5 class="modal-title"><i class="fas fa-cloud me-2"></i>Cloud Computing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Migramos y optimizamos tu infraestructura en la nube para mayor escalabilidad y eficiencia.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-warning">Solicitar Presupuesto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Modal -->
+    <div class="modal fade" id="securityModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-info text-white">
+                    <h5 class="modal-title"><i class="fas fa-shield-alt me-2"></i>Ciberseguridad</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Protegemos tu negocio con soluciones de seguridad avanzadas y auditorías completas.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-info">Solicitar Presupuesto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Modal -->
+    <div class="modal fade" id="aiModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title"><i class="fas fa-robot me-2"></i>IA & Machine Learning</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Automatizamos procesos y extraemos insights valiosos de tus datos con inteligencia artificial.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-dark">Solicitar Presupuesto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consulting Modal -->
+    <div class="modal fade" id="consultingModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title"><i class="fas fa-chart-line me-2"></i>Consultoría IT</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Optimizamos tu infraestructura tecnológica y te ayudamos a tomar las mejores decisiones
+                        estratégicas.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-danger">Solicitar Presupuesto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-laptop-code me-2"></i>TechCorp</h5>
+                    <p class="text-muted">Innovación tecnológica para el futuro</p>
+                </div>
+                <div class="col-md-3">
+                    <h6>Enlaces</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Inicio</a></li>
+                        <li><a href="servicios.html" class="text-light text-decoration-none">Servicios</a></li>
+                        <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Síguenos</h6>
+                    <a href="#" class="text-light me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <small>&copy; 2025 TechCorp. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
