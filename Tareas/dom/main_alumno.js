@@ -91,18 +91,25 @@ const contenido3 = document.getElementById('contenido3');
 const parrafos_Ej1 = contenido.getElementsByTagName('p');
 const parrafos_Ej3 = contenido3.getElementsByTagName('p');
 
+// Función para aplicar eventos hover a un párrafo
 function aplicarHover(parrafo) {
+   // Evento mouseover
    parrafo.addEventListener('mouseover', function () {
+      // Cambiar color de fondo
       parrafo.style.backgroundColor = '#e7f5ff';
    });
+   // Evento mouseout
    parrafo.addEventListener('mouseout', function () {
+      // Restaurar color de fondo
       parrafo.style.backgroundColor = '';
    });
 }
 
+// Aplicar hover a todos los párrafos del Ejercicio 1
 for (let i = 0; i < parrafos_Ej1.length; i++) {
    aplicarHover(parrafos_Ej1[i]);
 }
+// Aplicar hover a los párrafos del Ejercicio 3
 for (let i = 0; i < parrafos_Ej3.length; i++) {
    aplicarHover(parrafos_Ej3[i]);
 }
@@ -126,6 +133,7 @@ btnEj4.addEventListener('click', function () {
    // Seleccionar el primer párrafo dentro de #contenido4
    const primerParrafoEj4 = document.querySelector('#contenido4 p');
 
+   // Validar si el texto está vacío
    if (nuevoTexto === '') {
       // Mostrar mensaje de error
       msgErrorEj4.classList.remove('d-none');
@@ -136,6 +144,7 @@ btnEj4.addEventListener('click', function () {
       msgErrorEj4.classList.add('d-none');
       // Cambiar texto del primer párrafo
       if (primerParrafoEj4) {
+         // Actualizar el texto del párrafo
          primerParrafoEj4.textContent = nuevoTexto;
       }
    }
