@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 6 - Objetos y Arrays - Ejercicios Alumno</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        .resultado {
+            min-height: 50px;
+            background-color: #f8f9fa;
+            border-radius: 0.375rem;
+            padding: 1rem;
+        }
+
+        .producto-item {
+            background-color: white;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .instrucciones {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <h1 class="display-4 text-primary mb-4">Tema 6 - Objetos y Arrays</h1>
+        <p class="lead mb-5">Ejercicios prácticos para dominar objetos y arrays en JavaScript</p>
+
+        <div class="instrucciones">
+            <h5>📋 Instrucciones Generales:</h5>
+            <ul>
+                <li>Implementa cada ejercicio en el archivo <code>ejercicio_1_alumno.js</code></li>
+                <li>Sigue los comentarios TODO para completar cada función</li>
+                <li>Usa solo JavaScript vanilla (sin librerías externas)</li>
+                <li>Todas las salidas deben mostrarse en el DOM, no en la consola</li>
+                <li>Testea cada ejercicio antes de continuar con el siguiente</li>
+            </ul>
+        </div>
+
+        <!-- Ejercicio 1: Crear y mostrar objeto estudiante -->
+        <div id="ej1" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 1 - Crear Objeto Estudiante</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <strong>Objetivo:</strong> Crear un objeto estudiante con propiedades (nombre, apellidos, edad,
+                    curso)
+                    y un método mostrarInfo() que devuelva HTML con la información.
+                </div>
+                <button id="btn-ej1" class="btn btn-primary">Crear y Mostrar Estudiante</button>
+                <div id="resultado-ej1" class="resultado mt-3"></div>
+            </div>
+        </div>
+
+        <!-- Ejercicio 2: Array de colores con métodos básicos -->
+        <div id="ej2" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 2 - Gestión de Array de Colores</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <strong>Objetivo:</strong> Trabajar con un array de colores usando métodos push(), pop() y mostrar
+                    el contenido dinámicamente.
+                </div>
+                <div class="mb-3">
+                    <input type="text" id="color-input" class="form-control" placeholder="Escribe un color...">
+                </div>
+                <div class="d-flex gap-2 mb-3">
+                    <button id="btn-agregar-color" class="btn btn-success">Agregar Color</button>
+                    <button id="btn-eliminar-ultimo" class="btn btn-danger">Eliminar Último</button>
+                    <button id="btn-mostrar-colores" class="btn btn-info">Mostrar Colores</button>
+                </div>
+                <div id="resultado-ej2" class="resultado"></div>
+            </div>
+        </div>
+
+        <!-- Ejercicio 3: Array de objetos - Lista de productos -->
+        <div id="ej3" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 3 - Catálogo de Productos</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <strong>Objetivo:</strong> Crear y gestionar un array de objetos producto (nombre, precio,
+                    categoria).
+                    Practicar ordenamiento y filtrado.
+                </div>
+                <button id="btn-cargar-productos" class="btn btn-primary">Cargar Productos</button>
+                <button id="btn-ordenar-precio" class="btn btn-secondary">Ordenar por Precio</button>
+                <button id="btn-filtrar-caros" class="btn btn-warning">Filtrar Productos >50€</button>
+                <div id="resultado-ej3" class="resultado mt-3"></div>
+            </div>
+        </div>
+
+        <!-- Ejercicio 4: Objeto con array anidado - Estudiante con notas -->
+        <div id="ej4" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 4 - Estudiante con Notas</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <strong>Objetivo:</strong> Crear un objeto estudiante que contenga un array de notas y métodos para
+                    agregar notas y calcular el promedio.
+                </div>
+                <div class="mb-3">
+                    <input type="number" id="nota-input" class="form-control" placeholder="Ingresa una nota (0-10)"
+                        min="0" max="10">
+                </div>
+                <div class="d-flex gap-2 mb-3">
+                    <button id="btn-agregar-nota" class="btn btn-success">Agregar Nota</button>
+                    <button id="btn-calcular-promedio" class="btn btn-primary">Calcular Promedio</button>
+                    <button id="btn-mostrar-notas" class="btn btn-info">Mostrar Notas</button>
+                </div>
+                <div id="resultado-ej4" class="resultado"></div>
+            </div>
+        </div>
+
+        <!-- Ejercicio 5: Array de objetos complejos - Empleados -->
+        <div id="ej5" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 5 - Gestión de Empleados</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <strong>Objetivo:</strong> Gestionar un array de objetos empleado con métodos de búsqueda y filtrado
+                    por departamento y salario.
+                </div>
+                <div class="mb-3">
+                    <input type="text" id="departamento-input" class="form-control"
+                        placeholder="Buscar por departamento...">
+                </div>
+                <div class="d-flex gap-2 mb-3">
+                    <button id="btn-cargar-empleados" class="btn btn-primary">Cargar Empleados</button>
+                    <button id="btn-buscar-depto" class="btn btn-secondary">Buscar por Departamento</button>
+                    <button id="btn-salario-alto" class="btn btn-warning">Salario > 3000€</button>
+                </div>
+                <div id="resultado-ej5" class="resultado"></div>
+            </div>
+        </div>
+
+        <!-- Ejercicio 6: Manipulación de arrays con splice, slice, concat -->
+        <div id="ej6" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 6 - Métodos Avanzados de Arrays</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <strong>Objetivo:</strong> Practicar splice, slice, concat, find, indexOf con un array de ciudades
+                    españolas.
+                </div>
+                <div class="d-flex gap-2 mb-3">
+                    <button id="btn-crear-ciudades" class="btn btn-primary">Crear Array Ciudades</button>
+                    <button id="btn-eliminar-medio" class="btn btn-danger">Eliminar del Medio</button>
+                    <button id="btn-extraer-slice" class="btn btn-info">Extraer con Slice</button>
+                    <button id="btn-buscar-ciudad" class="btn btn-secondary">Buscar Madrid</button>
+                </div>
+                <div id="resultado-ej6" class="resultado"></div>
+            </div>
+        </div>
+
+        <!-- Ejercicio 7: Objeto constructor - Vehículos -->
+        <div id="ej7" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 7 - Constructor de Vehículos</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <strong>Objetivo:</strong> Crear múltiples objetos vehículo usando función constructora con
+                    propiedades y métodos.
+                </div>
+                <div class="d-flex gap-2 mb-3">
+                    <button id="btn-crear-vehiculos" class="btn btn-primary">Crear Vehículos</button>
+                    <button id="btn-acelerar-todos" class="btn btn-success">Acelerar Todos</button>
+                    <button id="btn-info-vehiculos" class="btn btn-info">Mostrar Info</button>
+                </div>
+                <div id="resultado-ej7" class="resultado"></div>
+            </div>
+        </div>
+
+        <!-- Ejercicio 8: Array multidimensional - Matriz de números -->
+        <div id="ej8" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 8 - Matriz de Números</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <strong>Objetivo:</strong> Trabajar con arrays multidimensionales (matriz 3x3) y realizar
+                    operaciones matemáticas.
+                </div>
+                <div class="d-flex gap-2 mb-3">
+                    <button id="btn-crear-matriz" class="btn btn-primary">Crear Matriz 3x3</button>
+                    <button id="btn-sumar-diagonal" class="btn btn-success">Sumar Diagonal</button>
+                    <button id="btn-mostrar-matriz" class="btn btn-info">Mostrar Matriz</button>
+                </div>
+                <div id="resultado-ej8" class="resultado"></div>
+            </div>
+        </div>
+
+        <!-- Ejercicio 9: Métodos funcionales - map, filter, reduce -->
+        <div id="ej9" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 9 - Métodos Funcionales</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <strong>Objetivo:</strong> Dominar los métodos map, filter y reduce con un array de números.
+                </div>
+                <div class="d-flex gap-2 mb-3">
+                    <button id="btn-crear-numeros" class="btn btn-primary">Crear Array Números</button>
+                    <button id="btn-duplicar-map" class="btn btn-success">Duplicar (map)</button>
+                    <button id="btn-filtrar-pares" class="btn btn-warning">Filtrar Pares</button>
+                    <button id="btn-sumar-reduce" class="btn btn-info">Sumar Todo (reduce)</button>
+                </div>
+                <div id="resultado-ej9" class="resultado"></div>
+            </div>
+        </div>
+
+        <!-- Ejercicio 10: Aplicación completa - Biblioteca de libros -->
+        <div id="ej10" class="card mb-5">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">Ejercicio 10 - Biblioteca de Libros (Proyecto Final)</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <strong>Objetivo:</strong> Crear una aplicación completa de gestión de biblioteca con
+                    funcionalidades CRUD (Crear, Leer, Actualizar, Eliminar).
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <input type="text" id="libro-titulo" class="form-control" placeholder="Título">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="libro-autor" class="form-control" placeholder="Autor">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="number" id="libro-year" class="form-control" placeholder="Año">
+                    </div>
+                    <div class="col-md-2">
+                        <select id="libro-genero" class="form-select" title="Selecciona el género del libro">
+                            <option value="">Género</option>
+                            <option value="Ficción">Ficción</option>
+                            <option value="No ficción">No ficción</option>
+                            <option value="Ciencia">Ciencia</option>
+                            <option value="Historia">Historia</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button id="btn-agregar-libro" class="btn btn-success">Agregar</button>
+                    </div>
+                </div>
+                <div class="d-flex gap-2 mb-3">
+                    <button id="btn-mostrar-biblioteca" class="btn btn-primary">Mostrar Biblioteca</button>
+                    <button id="btn-ordenar-titulo" class="btn btn-secondary">Ordenar por Título</button>
+                    <button id="btn-filtrar-genero" class="btn btn-warning">Filtrar por Género</button>
+                    <button id="btn-libros-recientes" class="btn btn-info">Libros Recientes (>2020)</button>
+                </div>
+                <div id="resultado-ej10" class="resultado"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- JavaScript personalizado para estudiantes -->
+    <script src="ejercicio_1_alumno.js"></script>
+</body>
+
+</html>
