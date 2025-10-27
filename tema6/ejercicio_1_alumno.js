@@ -155,6 +155,18 @@ function mostrarProductos(arrayProductos) {
     // Crear tarjetas o lista con nombre, precio y categoría
 
     var html = "";
+    if (arrayProductos.length === 0) {
+        html = "<div class='alert alert-warning'>No hay productos para mostrar.</div>";
+    } else {
+        for (var i = 0; i < arrayProductos.length; i++) {
+            var prod = arrayProductos[i];
+            html += "<div class='card mb-2'><div class='card-body'>";
+            html += "<h5 class='card-title'>" + prod.nombre + "</h5>";
+            html += "<p class='card-text'>Precio: " + prod.precio + "€</p>";
+            html += "<p class='card-text'>Categoría: " + prod.categoria + "</p>";
+            html += "</div></div>";
+        }
+    }
     // TODO: Recorrer el array y crear HTML para cada producto
 
     document.getElementById("resultado-ej3").innerHTML = html;
@@ -172,19 +184,45 @@ var estudianteNotas = {
         // TODO: Validar que la nota esté entre 0 y 10
         // TODO: Agregar la nota al array de notas
         // TODO: Mostrar mensaje de confirmación
+        if (nota >= 0 && nota <= 10) {
+            this.notas.push(nota);
+            document.getElementById("resultado-ej4").innerHTML =
+                "<div class='alert alert-success'>Nota " + nota + " agregada.</div>";
+        } else {
+            document.getElementById("resultado-ej4").innerHTML =
+                "<div class='alert alert-danger'>Nota inválida. Debe estar entre 0 y 10.</div>";
+        }
     },
 
     calcularPromedio: function () {
         // TODO: Calcular el promedio de todas las notas
         // TODO: Retornar el promedio redondeado a 2 decimales
         // Pista: usar reduce() o un bucle for
-        return 0; // Cambiar esta línea
+        if (this.notas.length === 0) {
+            return 0;
+        }
+        var suma = 0;
+        for (var i = 0; i < this.notas.length; i++) {
+            suma += this.notas[i];
+        }
+        var promedio = suma / this.notas.length;
+        return promedio.toFixed(2);
     },
 
     mostrarNotas: function () {
         // TODO: Retornar HTML con todas las notas
         // TODO: Incluir el promedio si hay notas
-        return ""; // Cambiar esta línea
+        if (this.notas.length === 0) {
+            return "<p>No hay notas registradas.</p>";
+        }
+        var html = "<h5>Notas del estudiante:</h5><ul>";
+        for (var i = 0; i < this.notas.length; i++) {
+            html += "<li>" + this.notas[i] + "</li>";
+        }
+        html += "</ul>";
+        var promedio = this.calcularPromedio();
+        html += "<p><strong>Promedio:</strong> " + promedio + "</p>";
+        return html;
     }
 };
 
@@ -194,16 +232,26 @@ function agregarNota() {
     // TODO: Llamar al método agregarNota del objeto
     // TODO: Limpiar el input
     // TODO: Actualizar la visualización
+    var input = document.getElementById("nota-input");
+    var nuevaNota = parseFloat(input.value);
+
+    estudianteNotas.agregarNota(nuevaNota);
+    input.value = "";
 }
 
 function calcularPromedio() {
     // TODO: Llamar al método calcularPromedio
     // TODO: Mostrar el resultado en el DOM
+    var promedio = estudianteNotas.calcularPromedio();
+    document.getElementById("resultado-ej4").innerHTML =
+        "<div class='alert alert-info'>Promedio de notas: " + promedio + "</div>";
 }
 
 function mostrarNotasEstudiante() {
     // TODO: Llamar al método mostrarNotas
     // TODO: Mostrar el resultado en el DOM
+    var notasHTML = estudianteNotas.mostrarNotas();
+    document.getElementById("resultado-ej4").innerHTML = notasHTML;
 }
 
 // ===================================
@@ -216,8 +264,8 @@ function cargarEmpleados() {
     // TODO: Crear array con al menos 6 objetos empleado
     // Cada empleado: nombre, departamento, salario, antiguedad
     empleados = [
-        // TODO: Completar con datos de empleados
-    ];
+
+    ]
 
     mostrarEmpleados(empleados);
 }
