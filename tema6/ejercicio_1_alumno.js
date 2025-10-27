@@ -28,19 +28,30 @@ function ejercicio1() {
     // - edad: 20
     // - curso: "2º DAW"
     // - mostrarInfo: function() que retorne HTML con toda la información
+    
 
     var estudiante = {
+        nombre: "María",
+        apellidos: "García López",
+        edad: 20,
+        curso: "2º DAW",
         // TODO: Completar las propiedades del objeto
 
         mostrarInfo: function () {
             // TODO: Retornar HTML con la información del estudiante
             // Sugerencia: usar template strings o concatenación
-            return ""; // Cambiar esta línea
+            return "<h5>Informacion del estudiante:</h5>"
+                + "<p>Nombre: " + this.nombre + "</p>"
+                + "<p>Apellidos: " + this.apellidos + "</p>"
+                + "<p>Edad: " + this.edad + "</p>"
+                + "<p>Curso: " + this.curso + "</p>";
+
         }
     };
 
     // TODO: Mostrar el resultado en el DOM
     // Pista: usar document.getElementById("resultado-ej1").innerHTML = estudiante.mostrarInfo();
+    document.getElementById("resultado-ej1").innerHTML = estudiante.mostrarInfo();
 }
 
 // ===================================
@@ -55,12 +66,32 @@ function agregarColor() {
     // TODO: Agregar el color al array usando push()
     // TODO: Limpiar el input
     // TODO: Mostrar mensaje de confirmación
+    var input = document.getElementById("color-input");
+    var nuevoColor = input.value.trim();
+
+    if (nuevoColor !== "") {
+        colores.push(nuevoColor);
+        input.value = "";
+        document.getElementById("resultado-ej2").innerHTML =
+            "<div class='alert alert-success'>Color '" + nuevoColor + "' agregado.</div>";
+    } else {
+        document.getElementById("resultado-ej2").innerHTML =
+            "<div class='alert alert-warning'>Por favor, ingresa un color válido.</div>";
+    }
 }
 
 function eliminarUltimoColor() {
     // TODO: Eliminar el último elemento del array usando pop()
     // TODO: Mostrar mensaje indicando qué color se eliminó
     // TODO: Si el array está vacío, mostrar mensaje apropiado
+    if (colores.length > 0) {
+        var eliminado = colores.pop();
+        document.getElementById("resultado-ej2").innerHTML =
+            "<div class='alert alert-info'>Color '" + eliminado + "' eliminado.</div>";
+    } else {
+        document.getElementById("resultado-ej2").innerHTML =
+            "<div class='alert alert-warning'>No hay colores para eliminar.</div>";
+    }
 }
 
 function mostrarColores() {
@@ -69,6 +100,9 @@ function mostrarColores() {
     // Sugerencia: usar un bucle for para crear la lista
 
     var html = "<h5>Lista de Colores:</h5><ul>";
+    for (var i = 0; i < colores.length; i++) {
+        html += "<li>" + colores[i] + "</li>";
+    }
     // TODO: Completar el bucle para mostrar los colores
     html += "</ul>";
 
@@ -85,8 +119,11 @@ function cargarProductos() {
     // TODO: Crear array con al menos 5 objetos producto
     // Cada producto debe tener: nombre, precio, categoria
     productos = [
-        // TODO: Completar con objetos producto
-        // Ejemplo: { nombre: "Laptop", precio: 899, categoria: "Electrónicos" }
+        { nombre: "Laptop", precio: 899, categoria: "Electrónicos" },
+        { nombre: "Smartphone", precio: 699, categoria: "Electrónicos" },
+        { nombre: "Camiseta", precio: 29, categoria: "Ropa" },
+        { nombre: "Zapatos", precio: 79, categoria: "Calzado" },
+        { nombre: "Mochila", precio: 49, categoria: "Accesorios" }
     ];
 
     mostrarProductos(productos);
@@ -95,6 +132,9 @@ function cargarProductos() {
 function ordenarPorPrecio() {
     // TODO: Ordenar el array productos por precio de menor a mayor
     // Pista: usar el método sort() con función comparadora
+    productos.sort(function (a, b) {
+        return a.precio - b.precio;
+    });
 
     mostrarProductos(productos);
 }
@@ -104,6 +144,9 @@ function filtrarProductosCaros() {
     // Pista: usar el método filter()
 
     var productosCaros = []; // TODO: Implementar el filtro
+    productosCaros = productos.filter(function (producto) {
+        return producto.precio > 50;
+    });
     mostrarProductos(productosCaros);
 }
 
