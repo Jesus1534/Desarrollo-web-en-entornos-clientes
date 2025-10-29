@@ -28,7 +28,7 @@ function ejercicio1() {
     // - edad: 20
     // - curso: "2º DAW"
     // - mostrarInfo: function() que retorne HTML con toda la información
-    
+
 
     var estudiante = {
         nombre: "María",
@@ -264,8 +264,13 @@ function cargarEmpleados() {
     // TODO: Crear array con al menos 6 objetos empleado
     // Cada empleado: nombre, departamento, salario, antiguedad
     empleados = [
-
-    ]
+        { nombre: "Juan", departamento: "finanzas", salario: 1200, antiguedad: "4 años" },
+        { nombre: "Antonio", departamento: "mantenimiento", salario: 2400, antiguedad: "2 años" },
+        { nombre: "Miguel", departamento: "contabilidad", salario: 3200, antiguedad: "7 años" },
+        { nombre: "Sandra", departamento: "marketing", salario: 1000, antiguedad: "1 años" },
+        { nombre: "Alex", departamento: "limpieza", salario: 8800, antiguedad: "15 años" },
+        { nombre: "Paula", departamento: "funcionario", salario: 2000, antiguedad: "3 años" }
+    ];
 
     mostrarEmpleados(empleados);
 }
@@ -275,15 +280,21 @@ function buscarPorDepartamento() {
     // TODO: Filtrar empleados por departamento
     // TODO: Mostrar los resultados
 
-    var departamento = ""; // TODO: Obtener del input
-    var empleadosDepto = []; // TODO: Implementar filtro
+    var departamento = document.getElementById("departamento-input").value.toLowerCase().trim();
+    var empleadosDepto = empleados.filter(function (empleado) {
+        return empleado.departamento === departamento;
+    });
 
     mostrarEmpleados(empleadosDepto);
 }
 
 function filtrarSalarioAlto() {
     // TODO: Filtrar empleados con salario > 3000€
-    var empleadosAltoSalario = []; // TODO: Implementar filtro
+    var empleadosAltoSalario = empleados.filter(function (empleado) {
+        if (empleado.salario > 3000) {
+            return empleado;
+        }
+    });
 
     mostrarEmpleados(empleadosAltoSalario);
 }
@@ -294,9 +305,20 @@ function mostrarEmpleados(arrayEmpleados) {
 
     var html = "";
     // TODO: Crear HTML para cada empleado
+    html += "<h5>Lista de Empleados</h5>"
+    for (var i = 0; i < arrayEmpleados.length; i++) {
+        html += "<div class='card mb-2'>";
+        html += "<div class='card-body'>";
+        html += "<h5 class='card-title'>" + arrayEmpleados[i].nombre + "</h5>";
+        html += "<p class='card-text'>Departamento: " + arrayEmpleados[i].departamento + "</p>";
+        html += "<p class='card-text'>Salario: " + arrayEmpleados[i].salario + "€</p>";
+        html += "<p class='card-text'>Antigüedad: " + arrayEmpleados[i].antiguedad + "</p>";
+        html += "</div></div>";
+    }
 
-    document.getElementById("resultado-ej5").innerHTML = html;
-}
+document.getElementById("resultado-ej5").innerHTML = html;
+
+};
 
 // ===================================
 // EJERCICIO 6: MÉTODOS AVANZADOS DE ARRAYS
@@ -306,7 +328,7 @@ var ciudades = [];
 
 function crearArrayCiudades() {
     // TODO: Crear array con ciudades españolas
-    ciudades = ["Madrid", "Barcelona", "Valencia", "Sevilla", "Bilbao", "Málaga"];
+    ciudades = ["Barcelona", "Madrid", "Valencia", "Sevilla", "Bilbao", "Málaga"];
 
     // TODO: Mostrar el array original
     var html = "<h5>Ciudades originales:</h5>" + ciudades.join(", ");
@@ -317,18 +339,41 @@ function eliminarDelMedio() {
     // TODO: Usar splice para eliminar elementos del medio
     // TODO: Mostrar qué elementos se eliminaron
     // TODO: Mostrar el array resultante
+    var medio = Math.floor(ciudades.length / 2);
+    var eliminados = ciudades.splice(medio, 2); // Elimina 2 elementos del medio
+
+    var html = "<h5>Elementos eliminados:</h5>" + eliminados.join(", ") +
+        "<h5>Array resultante:</h5>" + ciudades.join(", ");
+    document.getElementById("resultado-ej6").innerHTML = html;
 }
 
 function extraerConSlice() {
     // TODO: Usar slice para extraer una porción del array
     // TODO: Mostrar la porción extraída
     // TODO: Mostrar que el array original no se modifica
+    var porcion = ciudades.slice(1, 4); // Extrae desde índice 1 hasta 3
+
+    var html = "<h5>Porción extraída (índices 1 a 3):</h5>" + porcion.join(", ") +
+        "<h5>Array original (sin modificar):</h5>" + ciudades.join(", ");
+    document.getElementById("resultado-ej6").innerHTML = html;
 }
 
 function buscarMadrid() {
     // TODO: Usar find() para buscar "Madrid"
     // TODO: Usar indexOf() para encontrar su posición
     // TODO: Mostrar los resultados
+    var ciudadEncontrada = ciudades.find(function (ciudad) {
+        return ciudad === "Madrid";
+    });
+
+    var posicion = ciudades.indexOf("Madrid");
+
+    var html = "<h5>Resultado de la búsqueda:</h5>";
+    html += ciudadEncontrada ? "Ciudad encontrada: " + ciudadEncontrada : "Ciudad no encontrada";
+    html += "<br>Posición de 'Madrid': " + (posicion !== -1 ? posicion : "No está en el array");
+
+    document.getElementById("resultado-ej6").innerHTML = html;
+
 }
 
 // ===================================
