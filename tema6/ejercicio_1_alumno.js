@@ -316,7 +316,7 @@ function mostrarEmpleados(arrayEmpleados) {
         html += "</div></div>";
     }
 
-document.getElementById("resultado-ej5").innerHTML = html;
+    document.getElementById("resultado-ej5").innerHTML = html;
 
 };
 
@@ -340,10 +340,9 @@ function eliminarDelMedio() {
     // TODO: Mostrar qué elementos se eliminaron
     // TODO: Mostrar el array resultante
     var medio = Math.floor(ciudades.length / 2);
-    var eliminados = ciudades.splice(medio, 2); // Elimina 2 elementos del medio
+    var eliminados = ciudades.splice(medio, 1); // Elimina 1 elemento del medio
 
-    var html = "<h5>Elementos eliminados:</h5>" + eliminados.join(", ") +
-        "<h5>Array resultante:</h5>" + ciudades.join(", ");
+    var html = "<h5>Elementos eliminados:</h5>" + eliminados.join(", ") + "<h5>Array resultante:</h5>" + ciudades.join(", ");
     document.getElementById("resultado-ej6").innerHTML = html;
 }
 
@@ -353,8 +352,7 @@ function extraerConSlice() {
     // TODO: Mostrar que el array original no se modifica
     var porcion = ciudades.slice(1, 4); // Extrae desde índice 1 hasta 3
 
-    var html = "<h5>Porción extraída (índices 1 a 3):</h5>" + porcion.join(", ") +
-        "<h5>Array original (sin modificar):</h5>" + ciudades.join(", ");
+    var html = "<h5>Porción extraída (índices 1 a 3):</h5>" + porcion.join(", ") + "<h5>Array original (sin modificar):</h5>" + ciudades.join(", ");
     document.getElementById("resultado-ej6").innerHTML = html;
 }
 
@@ -369,9 +367,12 @@ function buscarMadrid() {
     var posicion = ciudades.indexOf("Madrid");
 
     var html = "<h5>Resultado de la búsqueda:</h5>";
-    html += ciudadEncontrada ? "Ciudad encontrada: " + ciudadEncontrada : "Ciudad no encontrada";
-    html += "<br>Posición de 'Madrid': " + (posicion !== -1 ? posicion : "No está en el array");
-
+    if (ciudadEncontrada) {
+        html += "<p>Ciudad encontrada con éxito</p>";
+        html += "<p>Indice de madrid: " + posicion + "</p>";
+    } else {
+        html += "<p>Ciudad no encontrada</p>";
+    }
     document.getElementById("resultado-ej6").innerHTML = html;
 
 }
@@ -385,6 +386,18 @@ function Vehiculo(marca, modelo, año) {
     // TODO: Asignar propiedades usando this
     // TODO: Crear método acelerar() que incremente la velocidad
     // TODO: Crear método mostrarInfo() que retorne información
+    this.marca = marca;
+    this.modelo = modelo;
+    this.año = año;
+    this.velocidad = 0;
+
+    this.acelerar = function () {
+        this.velocidad += 10;
+    };
+
+    this.mostrarInfo = function () {
+        return "Marca: " + this.marca + ", Modelo: " + this.modelo + ", Año: " + this.año + ", Velocidad: " + this.velocidad + " km/h";
+    };
 }
 
 var vehiculos = [];
@@ -392,7 +405,11 @@ var vehiculos = [];
 function crearVehiculos() {
     // TODO: Crear varios objetos usando el constructor
     // TODO: Agregar al array vehiculos
-    
+    var vehiculo1 = new Vehiculo("BMW", "Serie 3", 2020);
+    var vehiculo2 = new Vehiculo("Honda", "Civic", 2019);
+    var vehiculo3 = new Vehiculo("Ford", "Focus", 2018);
+
+    vehiculos.push(vehiculo1, vehiculo2, vehiculo3);
 
     mostrarInfoVehiculos();
 }
@@ -400,12 +417,23 @@ function crearVehiculos() {
 function acelerarTodos() {
     // TODO: Llamar al método acelerar() de todos los vehículos
     // TODO: Actualizar la visualización
+    for (var i = 0; i < vehiculos.length; i++) {
+        vehiculos[i].acelerar();
+    }
+
+    mostrarInfoVehiculos();
 }
 
 function mostrarInfoVehiculos() {
     // TODO: Mostrar información de todos los vehículos
     var html = "";
     // TODO: Recorrer array y mostrar info de cada vehículo
+    for (var i = 0; i < vehiculos.length; i++) {
+        html += "<div class='card mb-2'><div class='card-body'>";
+        html += "<h5 class='card-title'>Vehículo " + (i + 1) + "</h5>";
+        html += "<p class='card-text'>" + vehiculos[i].mostrarInfo() + "</p>";
+        html += "</div></div>";
+    }
 
     document.getElementById("resultado-ej7").innerHTML = html;
 }
@@ -419,6 +447,15 @@ var matriz = [];
 function crearMatriz() {
     // TODO: Crear matriz 3x3 con números aleatorios
     // Pista: usar bucles anidados y Math.random()
+    matriz = [];
+    for (var i = 0; i < 3; i++) {
+        var fila = [];
+        for (var j = 0; j < 3; j++) {
+            var numeroAleatorio = Math.floor(Math.random() * 100); // Numero entre 0 y 99
+            fila.push(numeroAleatorio);
+        }
+        matriz.push(fila);
+    }
 
     mostrarMatriz();
 }
@@ -426,14 +463,24 @@ function crearMatriz() {
 function sumarDiagonal() {
     // TODO: Calcular la suma de la diagonal principal
     // TODO: Mostrar el resultado
+    var suma = 0;
+    for (var i = 0; i < 3; i++) {
+        suma += matriz[i][i];
+    }
+
+    document.getElementById("resultado-ej8").innerHTML += "<div class='alert alert-info'>Suma de la diagonal principal: " + suma + "</div>";
 }
 
 function mostrarMatriz() {
     // TODO: Mostrar la matriz en formato tabla HTML
-    var html = "<h5>Matriz 3x3:</h5><table class='table table-bordered'>";
-
-    // TODO: Crear filas y celdas de la tabla
-
+    var html = "<h5>Matriz 3x3:</h5><table class='table table-bordered text-center'>";
+    for (var i = 0; i < 3; i++) {
+        html += "<tr>";
+        for (var j = 0; j < 3; j++) {
+            html += "<td>" + matriz[i][j] + "</td>";
+        }
+        html += "</tr>";
+    }
     html += "</table>";
     document.getElementById("resultado-ej8").innerHTML = html;
 }
@@ -447,6 +494,9 @@ var numeros = [];
 function crearArrayNumeros() {
     // TODO: Crear array con números del 1 al 10
     numeros = []; // TODO: Completar
+    for (var i = 1; i <= 10; i++) {
+        numeros.push(i);
+    }
 
     mostrarArray("Array original", numeros);
 }
@@ -454,6 +504,14 @@ function crearArrayNumeros() {
 function duplicarConMap() {
     // TODO: Usar map() para duplicar todos los números
     var duplicados = []; // TODO: Implementar map
+    if (numeros.length === 0) {
+        document.getElementById("resultado-ej9").innerHTML =
+            "<div class='alert alert-warning'>El array está vacío. Por favor, crea el array primero.</div>";
+        return;
+    }
+    duplicados = numeros.map(function (num) {
+        return num * 2;
+    });
 
     mostrarArray("Números duplicados", duplicados);
 }
@@ -461,6 +519,14 @@ function duplicarConMap() {
 function filtrarPares() {
     // TODO: Usar filter() para obtener solo números pares
     var pares = []; // TODO: Implementar filter
+    if (numeros.length === 0) {
+        document.getElementById("resultado-ej9").innerHTML =
+            "<div class='alert alert-warning'>El array está vacío. Por favor, crea el array primero.</div>";
+        return;
+    }
+    pares = numeros.filter(function (num) {
+        return num % 2 === 0;
+    });
 
     mostrarArray("Números pares", pares);
 }
@@ -468,8 +534,11 @@ function filtrarPares() {
 function sumarConReduce() {
     // TODO: Usar reduce() para sumar todos los números
     var suma = 0; // TODO: Implementar reduce
+    suma = numeros.reduce(function (acumulador, num) {
+        return acumulador + num;
+    }, 0);
 
-    document.getElementById("resultado-ej9").innerHTML +=
+    document.getElementById("resultado-ej9").innerHTML =
         "<div class='alert alert-success'>Suma total: " + suma + "</div>";
 }
 
@@ -486,39 +555,78 @@ var biblioteca = [];
 
 function agregarLibro() {
     // TODO: Obtener valores de los inputs
-    var titulo = ""; // TODO: Obtener del input
-    var autor = ""; // TODO: Obtener del input
-    var año = 0; // TODO: Obtener y convertir a número
-    var genero = ""; // TODO: Obtener del select
+    var titulo = document.getElementById("libro-titulo").value;
+    var autor = document.getElementById("libro-autor").value;
+    var año = parseInt(document.getElementById("libro-year").value);
+    var genero = document.getElementById("libro-genero").value;
 
     // TODO: Validar que todos los campos estén completos
+    if (titulo === "" || autor === "" || isNaN(año) || genero === "") {
+        document.getElementById("resultado-ej10").innerHTML =
+            "<div class='alert alert-danger'>Por favor, completa todos los campos.</div>";
+        return;
+    };
 
     // TODO: Crear objeto libro y agregarlo a la biblioteca
     var libro = {
-        // TODO: Completar propiedades
+        titulo: titulo,
+        autor: autor,
+        año: año,
+        genero: genero
     };
 
-    // TODO: Limpiar los inputs
+    // Limpiar los inputs
+    document.getElementById("libro-titulo").value = "";
+    document.getElementById("libro-autor").value = "";
+    document.getElementById("libro-year").value = "";
+    document.getElementById("libro-genero").value = "";
+
     // TODO: Mostrar mensaje de confirmación
+    document.getElementById("resultado-ej10").innerHTML =
+        "<div class='alert alert-success'>Libro agregado con éxito.</div>";
+
     // TODO: Actualizar visualización
+    biblioteca.push(libro);
+    mostrarBiblioteca();
 }
 
 function mostrarBiblioteca() {
-    // TODO: Mostrar todos los libros de la biblioteca
+    // Verificar si hay libros en la biblioteca
+    if (biblioteca.length === 0) {
+        document.getElementById("resultado-ej10").innerHTML = 
+            "<div class='alert alert-info'>La biblioteca está vacía. Agrega algunos libros primero.</div>";
+        return;
+    }
+    // Mostrar todos los libros de la biblioteca
     mostrarLibros(biblioteca);
 }
 
 function ordenarPorTitulo() {
     // TODO: Ordenar libros por título alfabéticamente
     var librosOrdenados = []; // TODO: Implementar sort
+    librosOrdenados = biblioteca.slice().sort(function (a, b) {
+        if (a.titulo < b.titulo) return -1;
+        if (a.titulo > b.titulo) return 1;
+        return 0;
+    });
 
     mostrarLibros(librosOrdenados);
 }
 
 function filtrarPorGenero() {
-    // TODO: Obtener género seleccionado
-    // TODO: Filtrar libros por género
-    var librosFiltrados = []; // TODO: Implementar filter
+
+    var generoSelect = document.getElementById("libro-genero");
+    var generoSeleccionado = generoSelect.value;
+    
+    if (generoSeleccionado === "") {
+        document.getElementById("resultado-ej10").innerHTML = 
+            "<div class='alert alert-warning'>Por favor, selecciona un género para filtrar.</div>";
+        return;
+    }
+
+    var librosFiltrados = biblioteca.filter(function (libro) {
+        return libro.genero === generoSeleccionado;
+    });
 
     mostrarLibros(librosFiltrados);
 }
@@ -526,6 +634,9 @@ function filtrarPorGenero() {
 function librosRecientes() {
     // TODO: Filtrar libros publicados después del 2020
     var recientes = []; // TODO: Implementar filter
+    recientes = biblioteca.filter(function (libro) {
+        return libro.año > 2020;
+    });
 
     mostrarLibros(recientes);
 }
@@ -538,9 +649,25 @@ function mostrarLibros(arrayLibros) {
         html = "<div class='alert alert-warning'>No hay libros para mostrar</div>";
     } else {
         // TODO: Crear HTML para cada libro
+        for (var i = 0; i < arrayLibros.length; i++) {
+            html += "<div class='card mb-2'><div class='card-body'>";
+            html += "<h5 class='card-title'>" + arrayLibros[i].titulo + "</h5>";
+            html += "<p class='card-text'>Autor: " + arrayLibros[i].autor + "</p>";
+            html += "<p class='card-text'>Año: " + arrayLibros[i].año + "</p>";
+            html += "<p class='card-text'>Género: " + arrayLibros[i].genero + "</p>";
+            html += "<button class='btn btn-danger btn-sm' onclick='eliminarLibro(" + i + ")'>Eliminar</button>";
+            html += "</div></div>";
+        }
     }
 
     document.getElementById("resultado-ej10").innerHTML = html;
+}
+
+function eliminarLibro(index) {
+    if (confirm("¿Quieres eliminar este libro?")) {
+        biblioteca.splice(index, 1);
+        mostrarBiblioteca();
+    }
 }
 
 // ===================================
@@ -594,7 +721,12 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("btn-sumar-reduce").addEventListener("click", sumarConReduce);
 
     // Ejercicio 10
-    // TODO: Añadir event listeners para los botones del ejercicio 10
+    document.getElementById("btn-agregar-libro").addEventListener("click", agregarLibro);
+    document.getElementById("btn-mostrar-biblioteca").addEventListener("click", mostrarBiblioteca);
+    document.getElementById("btn-ordenar-titulo").addEventListener("click", ordenarPorTitulo);
+    document.getElementById("btn-filtrar-genero").addEventListener("click", filtrarPorGenero);
+    document.getElementById("btn-libros-recientes").addEventListener("click", librosRecientes);
+
 
 });
 
