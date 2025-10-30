@@ -392,6 +392,7 @@ var vehiculos = [];
 function crearVehiculos() {
     // TODO: Crear varios objetos usando el constructor
     // TODO: Agregar al array vehiculos
+    
 
     mostrarInfoVehiculos();
 }
