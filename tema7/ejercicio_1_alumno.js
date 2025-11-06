@@ -54,6 +54,7 @@ document.getElementById('run-e4').addEventListener('click', function () {
   
   var x = 10;
   console.log('El valor de x después de la declaración es: ' + x);
+  
 });
 
 
