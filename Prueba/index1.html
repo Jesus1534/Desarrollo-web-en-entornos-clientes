@@ -1,0 +1,24 @@
+<form id="loginForm" action="/login" method="post" novalidate>
+    <input type="text" name="usuario" required>
+    <input type="password" name="clave" required>
+    <button type="submit">Enviar</button>
+</form>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+        // Evita que se envíe automáticamente
+        e.preventDefault();
+
+        // Validación
+        const usuario = this.usuario.value.trim();
+        const clave = this.clave.value.trim();
+
+        if (usuario === '' || clave === '') {
+            alert('Rellena todos los campos.');
+            return;
+        }
+
+        // Si pasa la validación, enviamos el formulario:
+        this.submit();
+    });
+</script>

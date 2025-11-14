@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejercicios – Tema 8 con Bootstrap 5</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .card+.card {
+            margin-top: 1rem
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <div class="container pgit 
+			<h1 class=" mb-4">Ejercicios - Tema 8: Validación de formularios</h1>
+        <p class="text-muted">Se mantiene el patrón de validación con <code>addEventListener('submit', …)</code> y
+            validación HTML5 donde corresponde.</p>
+        <!-- EJ1 -->
+        <div class="card">
+            <div class="card-header">Ejercicio 1 – JS básico</div>
+            <div class="card-body">
+                <form id="bs-form-ej1" class="row g-3" novalidate>
+                    <div class="col-md-6">
+                        <label for="usuario" class="form-label">Usuario</label>
+                        <input class="form-control" type="text" name="usuario">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="clave" class="form-label">Contraseña</label>
+                        <input class="form-control" type="password" name="clave">
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Enviar</button>
+                    </div>
+                </form>
+                <div id="bs-msg-ej1" class="mt-2"></div>
+            </div>
+        </div>
+        <!-- EJ2 -->
+        <div class="card">
+            <div class="card-header">Ejercicio 2 – JS básico</div>
+            <div class="card-body">
+                <form id="bs-form-ej2" class="row g-3">
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input class="form-control" type="email" name="email" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="edad" class="form-label">Edad</label>
+                        <input class="form-control" type="number" min="18" max="120" name="edad" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="clave" class="form-label">Contraseña</label>
+                        <input class="form-control" type="password" minlength="6" name="clave" required>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Enviar</button>
+                    </div>
+                </form>
+                <div id="bs-msg-ej2" class="mt-2"></div>
+            </div>
+        </div>
+        <!-- EJ3 -->
+        <div class="card">
+            <div class="card-header">Ejercicio 3 – Validación con patrón (Pattern)</div>
+            <div class="card-body">
+                <form id="bs-form-ej3" class="row g-3">
+                    <div class="col-12">
+                        <label for="nombre-apellidos" class="form-label">Nombre y Apellidos</label>
+                        <input class="form-control" type="text" id="nombre-apellidos" name="nombre-apellidos" required 
+                         pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\- ]+" title="Solo se permiten letras, letras acentuadas, Ñ/ñ, espacios y guiones">
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Enviar</button>
+                    </div>
+                </form>
+                <div id="bs-msg-ej3" class="mt-2"></div>
+            </div>
+        </div>
+        <!-- EJ4 -->
+        <div class="card">
+            <div class="card-header">Ejercicio 4 – Coincidencia de contraseñas</div>
+            <div class="card-body">
+                <form id="bs-form-ej4" class="row g-3" novalidate>
+                    <div class="col-md-6">
+                        <label for="password-ej4" class="form-label">Contraseña</label>
+                        <input class="form-control" type="password" id="password-ej4" name="password" minlength="6" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="password-repeat-ej4" class="form-label">Repetir Contraseña</label>
+                        <input class="form-control" type="password" id="password-repeat-ej4" name="password-repeat" minlength="6" required>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Registrar</button>
+                    </div>
+                </form>
+                <div id="bs-msg-ej4" class="mt-2"></div>
+            </div>
+        </div>
+        <!-- EJ5 -->
+        <div class="card">
+            <div class="card-header">Ejercicio 5 – Registro completo (Todas las técnicas)</div>
+            <div class="card-body">
+                <form id="bs-form-ej5" class="row g-3">
+                    <div class="col-12">
+                        <label for="nombre-ej5" class="form-label">Nombre y Apellidos</label>
+                        <input class="form-control" type="text" id="nombre-ej5" name="nombre" required 
+                         pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\- ]+" title="Solo se permiten letras, letras acentuadas, Ñ/ñ, espacios y guiones">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email-ej5" class="form-label">Email</label>
+                        <input class="form-control" type="email" id="email-ej5" name="email" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="edad-ej5" class="form-label">Edad</label>
+                        <input class="form-control" type="number" id="edad-ej5" name="edad" min="16" max="120" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="password-ej5" class="form-label">Contraseña</label>
+                        <input class="form-control" type="password" id="password-ej5" name="password" minlength="6" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="password-repeat-ej5" class="form-label">Repetir Contraseña</label>
+                        <input class="form-control" type="password" id="password-repeat-ej5" name="password-repeat" minlength="6" required>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="terminos-ej5" name="terminos" required>
+                            <label class="form-check-label" for="terminos-ej5">Acepto los términos y condiciones</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Enviar</button>
+                    </div>
+                </form>
+                <div id="bs-msg-ej5" class="mt-2"></div>
+            </div>
+        </div>
+        <!-- Bootstrap 5 JS (bundle con Popper) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script>
+            // TODO: Aquí va el código de validación 
+            document.getElementById('bs-form-ej1').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const usuario = this.usuario.value.trim();
+                const clave = this.clave.value.trim();
+                const mensaje = document.getElementById("bs-msg-ej1");
+
+                if (usuario === '' || clave === '') {
+                    mensaje.innerHTML = '<div class="alert alert-danger">Rellena todos los campos.</div>';
+                    return;
+                }
+
+                mensaje.innerHTML = '<div class="alert alert-success">Formulario enviado</div>';
+                this.reset();
+            });
+
+
+            document.getElementById("bs-form-ej3").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const form = e.target;
+                const mensaje = document.getElementById("bs-msg-ej3");
+
+                if (form.checkValidity()) {
+                    mensaje.innerHTML = '<div class="alert alert-success">Formulario enviado correctamente</div>'
+                    form.reset();
+                } else {
+                    form.reportValidity();
+                    mensaje.innerHTML = '<div class="alert alert-danger">Error en el formulario</div>'
+                }
+            });
+
+            document.getElementById('bs-form-ej4').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const password = this.password.value.trim();
+                const passwordRepeat = this['password-repeat'].value.trim();
+                const mensaje = document.getElementById("bs-msg-ej4");
+
+                if (password === '' || passwordRepeat === '') {
+                    mensaje.innerHTML = '<div class="alert alert-danger">Rellena todos los campos.</div>';
+                    return;
+                }
+
+                if (password !== passwordRepeat) {
+                    mensaje.innerHTML = '<div class="alert alert-danger">Las contraseñas no coinciden.</div>';
+                    return;
+                }
+
+                if (password.length < 6) {
+                    mensaje.innerHTML = '<div class="alert alert-danger">La contraseña debe tener al menos 6 caracteres.</div>';
+                    return;
+                }
+
+                mensaje.innerHTML = '<div class="alert alert-success">Registro exitoso</div>';
+                this.reset();
+            });
+
+            document.getElementById('bs-form-ej5').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const form = this;
+                const mensaje = document.getElementById("bs-msg-ej5");
+
+                // Validar que el formulario cumpla con validaciones HTML5
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    mensaje.innerHTML = '<div class="alert alert-danger">Error en los datos del formulario</div>';
+                    return;
+                }
+
+                const password = form.password.value.trim();
+                const passwordRepeat = form['password-repeat'].value.trim();
+
+                // Validar coincidencia de contraseñas
+                if (password !== passwordRepeat) {
+                    mensaje.innerHTML = '<div class="alert alert-danger">Las contraseñas no coinciden.</div>';
+                    return;
+                }
+
+                // Recopilar datos en un objeto
+                const datos = {
+                    nombre: form.nombre.value.trim(),
+                    email: form.email.value.trim(),
+                    edad: parseInt(form.edad.value),
+                    acepta_terminos: form.terminos.checked
+                };
+
+                // Mostrar datos en formato JSON
+                mensaje.innerHTML = '<div class="alert alert-success"><strong>Registro completado</strong><pre>' + JSON.stringify(datos, null, 2) + '</pre></div>';
+                form.reset();
+            });
+        </script>
+</body>
+
+</html>

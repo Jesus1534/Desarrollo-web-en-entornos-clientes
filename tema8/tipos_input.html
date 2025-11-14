@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Input en HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            border-bottom: 3px solid #28a745;
+            padding-bottom: 10px;
+        }
+        .tipo-input {
+            margin: 25px 0;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .tipo-input h2 {
+            color: #28a745;
+            margin-top: 0;
+            border-bottom: 1px solid #28a745;
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .codigo {
+            background-color: #2d3748;
+            border: 1px solid #4a5568;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            overflow-x: auto;
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+        
+        /* Coloreado de sintaxis */
+        .codigo .tag { color: #63b3ed; }
+        .codigo .attr-name { color: #68d391; }
+        .codigo .attr-value { color: #fbb6ce; }
+        .codigo .text { color: #e2e8f0; }
+        .codigo .comment { color: #a0aec0; font-style: italic; }
+        .codigo .indent { display: inline-block; width: 20px; }
+        .codigo .indent2 { display: inline-block; width: 40px; }
+        .codigo .indent3 { display: inline-block; width: 60px; }
+        .resultado {
+            background-color: #fff;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .descripcion {
+            background-color: #e9f7ef;
+            border-left: 4px solid #28a745;
+            padding: 10px 15px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        form {
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+        }
+        input {
+            margin: 5px 0 15px 0;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 250px;
+        }
+        input[type="color"] {
+            width: 60px;
+            height: 40px;
+            padding: 0;
+        }
+        input[type="range"] {
+            width: 200px;
+        }
+        input[type="checkbox"], input[type="radio"] {
+            width: auto;
+            margin-right: 8px;
+        }
+        .atributos {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .atributos h4 {
+            margin: 0 0 10px 0;
+            color: #856404;
+        }
+        .atributos ul {
+            margin: 5px 0;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .nota {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⌨️ Tipos de Input en HTML5</h1>
+        
+        <!-- TEXT -->
+        <div class="tipo-input">
+            <h2>📝 type="text" (Texto básico)</h2>
+            <div class="descripcion">
+                Campo de texto simple para entrada de datos alfanuméricos. Es el tipo por defecto.
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"nombre"</span><span class="tag">&gt;</span><span class="text">Nombre:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"text"</span> <span class="attr-name">id</span>=<span class="attr-value">"nombre"</span> <span class="attr-name">name</span>=<span class="attr-value">"nombre"</span><br>
+<span class="indent2"></span><span class="attr-name">placeholder</span>=<span class="attr-value">"Escribe tu nombre"</span><br>
+<span class="indent2"></span><span class="attr-name">maxlength</span>=<span class="attr-value">"50"</span> <span class="attr-name">required</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" 
+                           placeholder="Escribe tu nombre" 
+                           maxlength="50" required>
+                </form>
+            </div>
+            <div class="atributos">
+                <h4>Atributos comunes:</h4>
+                <ul>
+                    <li><code>placeholder</code>: Texto de ayuda</li>
+                    <li><code>maxlength</code>: Longitud máxima</li>
+                    <li><code>pattern</code>: Expresión regular para validación</li>
+                    <li><code>required</code>: Campo obligatorio</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="tipo-input">
+            <h2>🔒 type="password" (Contraseña)</h2>
+            <div class="descripcion">
+                Campo de texto que oculta los caracteres escritos para mayor seguridad.
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"password"</span><span class="tag">&gt;</span><span class="text">Contraseña:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"password"</span> <span class="attr-name">id</span>=<span class="attr-value">"password"</span> <span class="attr-name">name</span>=<span class="attr-value">"password"</span><br>
+<span class="indent2"></span><span class="attr-name">placeholder</span>=<span class="attr-value">"Mínimo 8 caracteres"</span><br>
+<span class="indent2"></span><span class="attr-name">minlength</span>=<span class="attr-value">"8"</span> <span class="attr-name">required</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" 
+                           placeholder="Mínimo 8 caracteres" 
+                           minlength="8" required>
+                </form>
+            </div>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="tipo-input">
+            <h2>📧 type="email" (Correo electrónico)</h2>
+            <div class="descripcion">
+                Campo específico para direcciones de email con validación automática del formato.
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"email"</span><span class="tag">&gt;</span><span class="text">Email:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"email"</span> <span class="attr-name">id</span>=<span class="attr-value">"email"</span> <span class="attr-name">name</span>=<span class="attr-value">"email"</span><br>
+<span class="indent2"></span><span class="attr-name">placeholder</span>=<span class="attr-value">"ejemplo@correo.com"</span> <span class="attr-name">required</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" 
+                           placeholder="ejemplo@correo.com" required>
+                </form>
+            </div>
+            <div class="nota">
+                <strong>Nota:</strong> En dispositivos móviles aparece un teclado optimizado para email.
+            </div>
+        </div>
+
+        <!-- NUMBER -->
+        <div class="tipo-input">
+            <h2>🔢 type="number" (Número)</h2>
+            <div class="descripcion">
+                Campo numérico con controles de incremento/decremento y validación automática.
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"edad"</span><span class="tag">&gt;</span><span class="text">Edad:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"number"</span> <span class="attr-name">id</span>=<span class="attr-value">"edad"</span> <span class="attr-name">name</span>=<span class="attr-value">"edad"</span><br>
+<span class="indent2"></span><span class="attr-name">min</span>=<span class="attr-value">"18"</span> <span class="attr-name">max</span>=<span class="attr-value">"100"</span> <span class="attr-name">step</span>=<span class="attr-value">"1"</span> <span class="attr-name">value</span>=<span class="attr-value">"25"</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" 
+                           min="18" max="100" step="1" value="25">
+                </form>
+            </div>
+            <div class="atributos">
+                <h4>Atributos específicos:</h4>
+                <ul>
+                    <li><code>min</code>: Valor mínimo</li>
+                    <li><code>max</code>: Valor máximo</li>
+                    <li><code>step</code>: Incremento/decremento</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- DATE -->
+        <div class="tipo-input">
+            <h2>📅 type="date" (Fecha)</h2>
+            <div class="descripcion">
+                Selector de fecha con calendario emergente (soporte variable según navegador).
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"fecha_nacimiento"</span><span class="tag">&gt;</span><span class="text">Fecha de nacimiento:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"date"</span> <span class="attr-name">id</span>=<span class="attr-value">"fecha_nacimiento"</span> <span class="attr-name">name</span>=<span class="attr-value">"fecha_nacimiento"</span><br>
+<span class="indent2"></span><span class="attr-name">min</span>=<span class="attr-value">"1900-01-01"</span> <span class="attr-name">max</span>=<span class="attr-value">"2023-12-31"</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" 
+                           min="1900-01-01" max="2023-12-31">
+                </form>
+            </div>
+        </div>
+
+        <!-- TIME -->
+        <div class="tipo-input">
+            <h2>⏰ type="time" (Hora)</h2>
+            <div class="descripcion">
+                Selector de hora en formato 24 horas (HH:MM).
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"hora_cita"</span><span class="tag">&gt;</span><span class="text">Hora de la cita:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"time"</span> <span class="attr-name">id</span>=<span class="attr-value">"hora_cita"</span> <span class="attr-name">name</span>=<span class="attr-value">"hora_cita"</span><br>
+<span class="indent2"></span><span class="attr-name">min</span>=<span class="attr-value">"09:00"</span> <span class="attr-name">max</span>=<span class="attr-value">"18:00"</span> <span class="attr-name">value</span>=<span class="attr-value">"14:30"</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="hora_cita">Hora de la cita:</label>
+                    <input type="time" id="hora_cita" name="hora_cita" 
+                           min="09:00" max="18:00" value="14:30">
+                </form>
+            </div>
+        </div>
+
+        <!-- DATETIME-LOCAL -->
+        <div class="tipo-input">
+            <h2>📅⏰ type="datetime-local" (Fecha y hora)</h2>
+            <div class="descripcion">
+                Combina fecha y hora en un solo campo, sin zona horaria.
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"evento"</span><span class="tag">&gt;</span><span class="text">Fecha y hora del evento:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"datetime-local"</span> <span class="attr-name">id</span>=<span class="attr-value">"evento"</span> <span class="attr-name">name</span>=<span class="attr-value">"evento"</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="evento">Fecha y hora del evento:</label>
+                    <input type="datetime-local" id="evento" name="evento">
+                </form>
+            </div>
+        </div>
+
+        <!-- TEL -->
+        <div class="tipo-input">
+            <h2>📞 type="tel" (Teléfono)</h2>
+            <div class="descripcion">
+                Campo para números de teléfono. Activa teclado numérico en móviles.
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"telefono"</span><span class="tag">&gt;</span><span class="text">Teléfono:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"tel"</span> <span class="attr-name">id</span>=<span class="attr-value">"telefono"</span> <span class="attr-name">name</span>=<span class="attr-value">"telefono"</span><br>
+<span class="indent2"></span><span class="attr-name">placeholder</span>=<span class="attr-value">"+34 123 456 789"</span><br>
+<span class="indent2"></span><span class="attr-name">pattern</span>=<span class="attr-value">"[+][0-9]{2}[0-9]{9}"</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" 
+                           placeholder="+34 123 456 789" 
+                           pattern="[+][0-9]{2}[0-9]{9}">
+                </form>
+            </div>
+        </div>
+
+        <!-- URL -->
+        <div class="tipo-input">
+            <h2>🌐 type="url" (URL)</h2>
+            <div class="descripcion">
+                Campo específico para URLs con validación de formato automática.
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"website"</span><span class="tag">&gt;</span><span class="text">Sitio web:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"url"</span> <span class="attr-name">id</span>=<span class="attr-value">"website"</span> <span class="attr-name">name</span>=<span class="attr-value">"website"</span><br>
+<span class="indent2"></span><span class="attr-name">placeholder</span>=<span class="attr-value">"https://ejemplo.com"</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="website">Sitio web:</label>
+                    <input type="url" id="website" name="website" 
+                           placeholder="https://ejemplo.com">
+                </form>
+            </div>
+        </div>
+
+        <!-- COLOR -->
+        <div class="tipo-input">
+            <h2>🎨 type="color" (Color)</h2>
+            <div class="descripcion">
+                Selector de color que abre un color picker del sistema.
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"color_favorito"</span><span class="tag">&gt;</span><span class="text">Color favorito:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"color"</span> <span class="attr-name">id</span>=<span class="attr-value">"color_favorito"</span> <span class="attr-name">name</span>=<span class="attr-value">"color_favorito"</span><br>
+<span class="indent2"></span><span class="attr-name">value</span>=<span class="attr-value">"#ff0000"</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="color_favorito">Color favorito:</label>
+                    <input type="color" id="color_favorito" name="color_favorito" 
+                           value="#ff0000">
+                </form>
+            </div>
+        </div>
+
+        <!-- RANGE -->
+        <div class="tipo-input">
+            <h2>🎚️ type="range" (Rango/Slider)</h2>
+            <div class="descripcion">
+                Control deslizante para seleccionar un valor dentro de un rango.
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"volumen"</span><span class="tag">&gt;</span><span class="text">Volumen (0-100):</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"range"</span> <span class="attr-name">id</span>=<span class="attr-value">"volumen"</span> <span class="attr-name">name</span>=<span class="attr-value">"volumen"</span><br>
+<span class="indent2"></span><span class="attr-name">min</span>=<span class="attr-value">"0"</span> <span class="attr-name">max</span>=<span class="attr-value">"100"</span> <span class="attr-name">value</span>=<span class="attr-value">"50"</span> <span class="attr-name">step</span>=<span class="attr-value">"10"</span><span class="tag">&gt;</span><br>
+<span class="tag">&lt;output</span> <span class="attr-name">for</span>=<span class="attr-value">"volumen"</span><span class="tag">&gt;</span><span class="text">50</span><span class="tag">&lt;/output&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="volumen">Volumen (0-100):</label>
+                    <input type="range" id="volumen" name="volumen" 
+                           min="0" max="100" value="50" step="10"
+                           oninput="document.getElementById('volumen-output').textContent = this.value">
+                    <output id="volumen-output">50</output>
+                </form>
+            </div>
+        </div>
+
+        <!-- FILE -->
+        <div class="tipo-input">
+            <h2>📁 type="file" (Archivo)</h2>
+            <div class="descripcion">
+                Permite seleccionar archivos del sistema para subir al servidor.
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"archivo"</span><span class="tag">&gt;</span><span class="text">Subir archivo:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"file"</span> <span class="attr-name">id</span>=<span class="attr-value">"archivo"</span> <span class="attr-name">name</span>=<span class="attr-value">"archivo"</span><br>
+<span class="indent2"></span><span class="attr-name">accept</span>=<span class="attr-value">".jpg,.jpeg,.png,.pdf"</span> <span class="attr-name">multiple</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="archivo">Subir archivo:</label>
+                    <input type="file" id="archivo" name="archivo" 
+                           accept=".jpg,.jpeg,.png,.pdf" multiple>
+                </form>
+            </div>
+            <div class="atributos">
+                <h4>Atributos específicos:</h4>
+                <ul>
+                    <li><code>accept</code>: Tipos de archivo permitidos</li>
+                    <li><code>multiple</code>: Permite seleccionar múltiples archivos</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CHECKBOX -->
+        <div class="tipo-input">
+            <h2>☑️ type="checkbox" (Casilla de verificación)</h2>
+            <div class="descripcion">
+                Casillas que permiten seleccionar múltiples opciones de una lista.
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"checkbox"</span> <span class="attr-name">id</span>=<span class="attr-value">"acepto"</span> <span class="attr-name">name</span>=<span class="attr-value">"acepto"</span> <span class="attr-name">value</span>=<span class="attr-value">"si"</span> <span class="attr-name">required</span><span class="tag">&gt;</span><br>
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"acepto"</span><span class="tag">&gt;</span><span class="text">Acepto los términos y condiciones</span><span class="tag">&lt;/label&gt;</span><br>
+<br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"checkbox"</span> <span class="attr-name">id</span>=<span class="attr-value">"newsletter"</span> <span class="attr-name">name</span>=<span class="attr-value">"newsletter"</span> <span class="attr-name">value</span>=<span class="attr-value">"si"</span> <span class="attr-name">checked</span><span class="tag">&gt;</span><br>
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"newsletter"</span><span class="tag">&gt;</span><span class="text">Suscribirme al newsletter</span><span class="tag">&lt;/label&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <input type="checkbox" id="acepto" name="acepto" value="si" required>
+                    <label for="acepto">Acepto los términos y condiciones</label>
+                    <br>
+                    <input type="checkbox" id="newsletter" name="newsletter" value="si" checked>
+                    <label for="newsletter">Suscribirme al newsletter</label>
+                </form>
+            </div>
+        </div>
+
+        <!-- RADIO -->
+        <div class="tipo-input">
+            <h2>🔘 type="radio" (Botón de opción)</h2>
+            <div class="descripcion">
+                Botones que permiten seleccionar UNA opción de un grupo (mismo name).
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;fieldset&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;legend&gt;</span><span class="text">Tamaño de camiseta:</span><span class="tag">&lt;/legend&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"radio"</span> <span class="attr-name">id</span>=<span class="attr-value">"small"</span> <span class="attr-name">name</span>=<span class="attr-value">"talla"</span> <span class="attr-name">value</span>=<span class="attr-value">"S"</span><span class="tag">&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"small"</span><span class="tag">&gt;</span><span class="text">Pequeña (S)</span><span class="tag">&lt;/label&gt;</span><br>
+<br>    
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"radio"</span> <span class="attr-name">id</span>=<span class="attr-value">"medium"</span> <span class="attr-name">name</span>=<span class="attr-value">"talla"</span> <span class="attr-name">value</span>=<span class="attr-value">"M"</span> <span class="attr-name">checked</span><span class="tag">&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"medium"</span><span class="tag">&gt;</span><span class="text">Mediana (M)</span><span class="tag">&lt;/label&gt;</span><br>
+<br>    
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"radio"</span> <span class="attr-name">id</span>=<span class="attr-value">"large"</span> <span class="attr-name">name</span>=<span class="attr-value">"talla"</span> <span class="attr-name">value</span>=<span class="attr-value">"L"</span><span class="tag">&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"large"</span><span class="tag">&gt;</span><span class="text">Grande (L)</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;/fieldset&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <fieldset style="border: 1px solid #ccc; padding: 10px;">
+                        <legend>Tamaño de camiseta:</legend>
+                        <input type="radio" id="small" name="talla" value="S">
+                        <label for="small">Pequeña (S)</label>
+                        <br>
+                        <input type="radio" id="medium" name="talla" value="M" checked>
+                        <label for="medium">Mediana (M)</label>
+                        <br>
+                        <input type="radio" id="large" name="talla" value="L">
+                        <label for="large">Grande (L)</label>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <!-- HIDDEN -->
+        <div class="tipo-input">
+            <h2>🔍 type="hidden" (Campo oculto)</h2>
+            <div class="descripcion">
+                Campo invisible para el usuario que almacena datos que se envían con el formulario.
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"hidden"</span> <span class="attr-name">name</span>=<span class="attr-value">"user_id"</span> <span class="attr-name">value</span>=<span class="attr-value">"12345"</span><span class="tag">&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"hidden"</span> <span class="attr-name">name</span>=<span class="attr-value">"token"</span> <span class="attr-name">value</span>=<span class="attr-value">"abc123xyz"</span><span class="tag">&gt;</span><br>
+<br>
+<span class="comment">&lt;!-- Campos visibles --&gt;</span><br>
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"comentario"</span><span class="tag">&gt;</span><span class="text">Comentario:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"text"</span> <span class="attr-name">id</span>=<span class="attr-value">"comentario"</span> <span class="attr-name">name</span>=<span class="attr-value">"comentario"</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <input type="hidden" name="user_id" value="12345">
+                    <input type="hidden" name="token" value="abc123xyz">
+                    
+                    <label for="comentario">Comentario:</label>
+                    <input type="text" id="comentario" name="comentario">
+                    <p><em>Los campos hidden no son visibles pero están presentes en el formulario</em></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="tipo-input">
+            <h2>🔍 type="search" (Búsqueda)</h2>
+            <div class="descripcion">
+                Campo de búsqueda con características especiales según el navegador (botón de limpiar).
+            </div>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"buscar"</span><span class="tag">&gt;</span><span class="text">Buscar:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"search"</span> <span class="attr-name">id</span>=<span class="attr-value">"buscar"</span> <span class="attr-name">name</span>=<span class="attr-value">"buscar"</span><br>
+<span class="indent2"></span><span class="attr-name">placeholder</span>=<span class="attr-value">"Escribe tu búsqueda..."</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="buscar">Buscar:</label>
+                    <input type="search" id="buscar" name="buscar" 
+                           placeholder="Escribe tu búsqueda...">
+                </form>
+            </div>
+        </div>
+
+        <!-- BOTONES DE SUBMIT, RESET, BUTTON -->
+        <div class="tipo-input">
+            <h2>🔲 Botones especiales</h2>
+            <div class="descripcion">
+                Tipos especiales de input que funcionan como botones.
+            </div>
+            <div class="codigo">
+<span class="comment">&lt;!-- Botón de envío --&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"submit"</span> <span class="attr-name">value</span>=<span class="attr-value">"Enviar formulario"</span><span class="tag">&gt;</span><br>
+<br>
+<span class="comment">&lt;!-- Botón de reset --&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"reset"</span> <span class="attr-name">value</span>=<span class="attr-value">"Limpiar formulario"</span><span class="tag">&gt;</span><br>
+<br>
+<span class="comment">&lt;!-- Botón personalizado --&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"button"</span> <span class="attr-name">value</span>=<span class="attr-value">"Botón personalizado"</span><br>
+<span class="indent2"></span><span class="attr-name">onclick</span>=<span class="attr-value">"alert('¡Hola!')"</span><span class="tag">&gt;</span><br>
+<br>
+<span class="comment">&lt;!-- Botón con imagen --&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"image"</span> <span class="attr-name">src</span>=<span class="attr-value">"data:image/svg+xml,..."</span><br>
+<span class="indent2"></span><span class="attr-name">alt</span>=<span class="attr-value">"Enviar"</span> <span class="attr-name">width</span>=<span class="attr-value">"100"</span> <span class="attr-name">height</span>=<span class="attr-value">"30"</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <input type="submit" value="Enviar formulario" style="margin: 5px;">
+                    <input type="reset" value="Limpiar formulario" style="margin: 5px;">
+                    <input type="button" value="Botón personalizado" 
+                           onclick="alert('¡Hola!')" style="margin: 5px;">
+                    <br>
+                    <input type="image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30'%3E%3Crect width='100' height='30' fill='%234CAF50'/%3E%3Ctext x='50' y='20' text-anchor='middle' fill='white' font-family='Arial'%3EEnviar%3C/text%3E%3C/svg%3E" 
+                           alt="Enviar" width="100" height="30" style="margin: 5px;">
+                </form>
+            </div>
+        </div>
+
+        <!-- FORMULARIO COMPLETO CON DIFERENTES TIPOS -->
+        <div class="tipo-input">
+            <h2>📋 Formulario Completo con Diferentes Tipos</h2>
+            <div class="codigo">
+<span class="tag">&lt;form</span> <span class="attr-name">action</span>=<span class="attr-value">"/registro"</span> <span class="attr-name">method</span>=<span class="attr-value">"post"</span> <span class="attr-name">enctype</span>=<span class="attr-value">"multipart/form-data"</span><span class="tag">&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"hidden"</span> <span class="attr-name">name</span>=<span class="attr-value">"form_id"</span> <span class="attr-name">value</span>=<span class="attr-value">"registro_2023"</span><span class="tag">&gt;</span><br>
+<br>    
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"nombre_completo"</span><span class="tag">&gt;</span><span class="text">Nombre completo:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"text"</span> <span class="attr-name">id</span>=<span class="attr-value">"nombre_completo"</span> <span class="attr-name">name</span>=<span class="attr-value">"nombre_completo"</span> <span class="attr-name">required</span><span class="tag">&gt;</span><br>
+<br>    
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"email_reg"</span><span class="tag">&gt;</span><span class="text">Email:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"email"</span> <span class="attr-name">id</span>=<span class="attr-value">"email_reg"</span> <span class="attr-name">name</span>=<span class="attr-value">"email_reg"</span> <span class="attr-name">required</span><span class="tag">&gt;</span><br>
+<br>    
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"edad_reg"</span><span class="tag">&gt;</span><span class="text">Edad:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"number"</span> <span class="attr-name">id</span>=<span class="attr-value">"edad_reg"</span> <span class="attr-name">name</span>=<span class="attr-value">"edad_reg"</span> <span class="attr-name">min</span>=<span class="attr-value">"16"</span> <span class="attr-name">max</span>=<span class="attr-value">"120"</span><span class="tag">&gt;</span><br>
+<br>    
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"fecha_reg"</span><span class="tag">&gt;</span><span class="text">Fecha de nacimiento:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"date"</span> <span class="attr-name">id</span>=<span class="attr-value">"fecha_reg"</span> <span class="attr-name">name</span>=<span class="attr-value">"fecha_reg"</span><span class="tag">&gt;</span><br>
+<br>    
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"foto"</span><span class="tag">&gt;</span><span class="text">Foto de perfil:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"file"</span> <span class="attr-name">id</span>=<span class="attr-value">"foto"</span> <span class="attr-name">name</span>=<span class="attr-value">"foto"</span> <span class="attr-name">accept</span>=<span class="attr-value">"image/*"</span><span class="tag">&gt;</span><br>
+<br>    
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"checkbox"</span> <span class="attr-name">id</span>=<span class="attr-value">"politica"</span> <span class="attr-name">name</span>=<span class="attr-value">"politica"</span> <span class="attr-name">required</span><span class="tag">&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"politica"</span><span class="tag">&gt;</span><span class="text">Acepto la política de privacidad</span><span class="tag">&lt;/label&gt;</span><br>
+<br>    
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"submit"</span> <span class="attr-name">value</span>=<span class="attr-value">"Registrarse"</span><span class="tag">&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"reset"</span> <span class="attr-name">value</span>=<span class="attr-value">"Limpiar"</span><span class="tag">&gt;</span><br>
+<span class="tag">&lt;/form&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form action="/registro" method="post" enctype="multipart/form-data" style="background: #f9f9f9; padding: 20px; border-radius: 8px;">
+                    <input type="hidden" name="form_id" value="registro_2023">
+                    
+                    <label for="nombre_completo">Nombre completo:</label>
+                    <input type="text" id="nombre_completo" name="nombre_completo" required>
+                    
+                    <label for="email_reg">Email:</label>
+                    <input type="email" id="email_reg" name="email_reg" required>
+                    
+                    <label for="edad_reg">Edad:</label>
+                    <input type="number" id="edad_reg" name="edad_reg" min="16" max="120">
+                    
+                    <label for="fecha_reg">Fecha de nacimiento:</label>
+                    <input type="date" id="fecha_reg" name="fecha_reg">
+                    
+                    <label for="foto">Foto de perfil:</label>
+                    <input type="file" id="foto" name="foto" accept="image/*">
+                    
+                    <input type="checkbox" id="politica" name="politica" required>
+                    <label for="politica">Acepto la política de privacidad</label>
+                    
+                    <br><br>
+                    <input type="submit" value="Registrarse" style="margin: 5px;">
+                    <input type="reset" value="Limpiar" style="margin: 5px;">
+                </form>
+            </div>
+        </div>
+
+        <div class="nota" style="margin-top: 30px; padding: 20px; background-color: #e7f3ff;">
+            <h3>📌 Notas Importantes:</h3>
+            <ul>
+                <li><strong>Compatibilidad:</strong> No todos los tipos están soportados en todos los navegadores, especialmente los más antiguos.</li>
+                <li><strong>Validación:</strong> HTML5 proporciona validación automática para muchos tipos, pero siempre debe validarse también en el servidor.</li>
+                <li><strong>Accesibilidad:</strong> Usar siempre etiquetas <code>&lt;label&gt;</code> asociadas correctamente.</li>
+                <li><strong>UX Móvil:</strong> Los tipos específicos (email, tel, number) activan teclados optimizados en dispositivos móviles.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

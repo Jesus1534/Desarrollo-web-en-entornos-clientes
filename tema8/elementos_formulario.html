@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos de un Formulario HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .elemento {
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .elemento h2 {
+            color: #007bff;
+            margin-top: 0;
+            border-bottom: 1px solid #007bff;
+            padding-bottom: 8px;
+        }
+        .codigo {
+            background-color: #2d3748;
+            border: 1px solid #4a5568;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            overflow-x: auto;
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+        
+        /* Coloreado de sintaxis */
+        .codigo .tag { color: #63b3ed; }
+        .codigo .attr-name { color: #68d391; }
+        .codigo .attr-value { color: #fbb6ce; }
+        .codigo .text { color: #e2e8f0; }
+        .codigo .comment { color: #a0aec0; font-style: italic; }
+        .codigo .indent { display: inline-block; width: 20px; }
+        .codigo .indent2 { display: inline-block; width: 40px; }
+        .codigo .indent3 { display: inline-block; width: 60px; }
+        .resultado {
+            background-color: #fff;
+            border: 2px solid #28a745;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        form {
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+        }
+        input, textarea, select, button {
+            margin: 5px 0 15px 0;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="text"], input[type="email"], input[type="password"], 
+        textarea, select {
+            width: 200px;
+        }
+        textarea {
+            height: 80px;
+            resize: vertical;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        fieldset {
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        legend {
+            color: #007bff;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        .radio-group, .checkbox-group {
+            margin: 10px 0;
+        }
+        .radio-group label, .checkbox-group label {
+            display: inline;
+            margin-left: 8px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖱️ Elementos de un Formulario HTML</h1>
+        
+        <!-- FORM -->
+        <div class="elemento">
+            <h2>&lt;form&gt; - Elemento contenedor del formulario</h2>
+            <div class="codigo">
+<span class="tag">&lt;form</span> <span class="attr-name">action</span>=<span class="attr-value">"/procesar"</span> <span class="attr-name">method</span>=<span class="attr-value">"post"</span><span class="tag">&gt;</span><br>
+<span class="indent"></span><span class="comment">&lt;!-- Aquí van todos los elementos del formulario --&gt;</span><br>
+<span class="tag">&lt;/form&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form action="/procesar" method="post" style="border: 1px dashed #007bff; padding: 10px;">
+                    <p>Este es el contenedor principal del formulario</p>
+                    <p><strong>Atributos principales:</strong></p>
+                    <ul>
+                        <li><code>action</code>: URL donde se enviarán los datos</li>
+                        <li><code>method</code>: GET o POST</li>
+                        <li><code>enctype</code>: Tipo de codificación (para archivos: multipart/form-data)</li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+
+        <!-- INPUT -->
+        <div class="elemento">
+            <h2>&lt;input&gt; - Campo de entrada</h2>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"nombre"</span><span class="tag">&gt;</span><span class="text">Nombre:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"text"</span> <span class="attr-name">id</span>=<span class="attr-value">"nombre"</span> <span class="attr-name">name</span>=<span class="attr-value">"nombre"</span><br>
+<span class="indent2"></span><span class="attr-name">placeholder</span>=<span class="attr-value">"Tu nombre"</span><span class="tag">&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+                </form>
+            </div>
+        </div>
+
+        <!-- TEXTAREA -->
+        <div class="elemento">
+            <h2>&lt;textarea&gt; - Área de texto multilínea</h2>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"comentarios"</span><span class="tag">&gt;</span><span class="text">Comentarios:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;textarea</span> <span class="attr-name">id</span>=<span class="attr-value">"comentarios"</span> <span class="attr-name">name</span>=<span class="attr-value">"comentarios"</span> <span class="attr-name">rows</span>=<span class="attr-value">"4"</span> <span class="attr-name">cols</span>=<span class="attr-value">"30"</span><br>
+<span class="indent2"></span><span class="attr-name">placeholder</span>=<span class="attr-value">"Escribe tus comentarios aquí..."</span><span class="tag">&gt;&lt;/textarea&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="comentarios">Comentarios:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4" cols="30" 
+                              placeholder="Escribe tus comentarios aquí..."></textarea>
+                </form>
+            </div>
+        </div>
+
+        <!-- SELECT -->
+        <div class="elemento">
+            <h2>&lt;select&gt; - Lista desplegable</h2>
+            <div class="codigo">
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"pais"</span><span class="tag">&gt;</span><span class="text">País:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;select</span> <span class="attr-name">id</span>=<span class="attr-value">"pais"</span> <span class="attr-name">name</span>=<span class="attr-value">"pais"</span><span class="tag">&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;option</span> <span class="attr-name">value</span>=<span class="attr-value">""</span><span class="tag">&gt;</span><span class="text">Selecciona un país</span><span class="tag">&lt;/option&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;option</span> <span class="attr-name">value</span>=<span class="attr-value">"es"</span><span class="tag">&gt;</span><span class="text">España</span><span class="tag">&lt;/option&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;option</span> <span class="attr-name">value</span>=<span class="attr-value">"fr"</span><span class="tag">&gt;</span><span class="text">Francia</span><span class="tag">&lt;/option&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;option</span> <span class="attr-name">value</span>=<span class="attr-value">"it"</span><span class="tag">&gt;</span><span class="text">Italia</span><span class="tag">&lt;/option&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;option</span> <span class="attr-name">value</span>=<span class="attr-value">"de"</span> <span class="attr-name">selected</span><span class="tag">&gt;</span><span class="text">Alemania</span><span class="tag">&lt;/option&gt;</span><br>
+<span class="tag">&lt;/select&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="pais">País:</label>
+                    <select id="pais" name="pais">
+                        <option value="">Selecciona un país</option>
+                        <option value="es">España</option>
+                        <option value="fr">Francia</option>
+                        <option value="it">Italia</option>
+                        <option value="de" selected>Alemania</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+
+        <!-- BUTTON -->
+        <div class="elemento">
+            <h2>&lt;button&gt; - Botones</h2>
+            <div class="codigo">
+<span class="tag">&lt;button</span> <span class="attr-name">type</span>=<span class="attr-value">"submit"</span><span class="tag">&gt;</span><span class="text">Enviar</span><span class="tag">&lt;/button&gt;</span><br>
+<span class="tag">&lt;button</span> <span class="attr-name">type</span>=<span class="attr-value">"reset"</span><span class="tag">&gt;</span><span class="text">Limpiar</span><span class="tag">&lt;/button&gt;</span><br>
+<span class="tag">&lt;button</span> <span class="attr-name">type</span>=<span class="attr-value">"button"</span> <span class="attr-name">onclick</span>=<span class="attr-value">"alert('¡Hola!')"</span><span class="tag">&gt;</span><span class="text">Botón personalizado</span><span class="tag">&lt;/button&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Limpiar</button>
+                    <button type="button" onclick="alert('¡Hola!')">Botón personalizado</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- LABEL -->
+        <div class="elemento">
+            <h2>&lt;label&gt; - Etiqueta para campos</h2>
+            <div class="codigo">
+<span class="comment">&lt;!-- Asociación por 'for' e 'id' --&gt;</span><br>
+<span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"email"</span><span class="tag">&gt;</span><span class="text">Email:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"email"</span> <span class="attr-name">id</span>=<span class="attr-value">"email"</span> <span class="attr-name">name</span>=<span class="attr-value">"email"</span><span class="tag">&gt;</span><br>
+<br>
+<span class="comment">&lt;!-- Asociación por anidamiento --&gt;</span><br>
+<span class="tag">&lt;label&gt;</span><br>
+<span class="indent"></span><span class="text">Teléfono:</span><br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"tel"</span> <span class="attr-name">name</span>=<span class="attr-value">"telefono"</span><span class="tag">&gt;</span><br>
+<span class="tag">&lt;/label&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <br><br>
+                    <label>
+                        Teléfono:
+                        <input type="tel" name="telefono">
+                    </label>
+                </form>
+            </div>
+        </div>
+
+        <!-- FIELDSET y LEGEND -->
+        <div class="elemento">
+            <h2>&lt;fieldset&gt; y &lt;legend&gt; - Agrupación de campos</h2>
+            <div class="codigo">
+<span class="tag">&lt;fieldset&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;legend&gt;</span><span class="text">Información Personal</span><span class="tag">&lt;/legend&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"nombre_persona"</span><span class="tag">&gt;</span><span class="text">Nombre:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"text"</span> <span class="attr-name">id</span>=<span class="attr-value">"nombre_persona"</span> <span class="attr-name">name</span>=<span class="attr-value">"nombre_persona"</span><span class="tag">&gt;</span><br>
+<br>
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"apellidos"</span><span class="tag">&gt;</span><span class="text">Apellidos:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"text"</span> <span class="attr-name">id</span>=<span class="attr-value">"apellidos"</span> <span class="attr-name">name</span>=<span class="attr-value">"apellidos"</span><span class="tag">&gt;</span><br>
+<span class="tag">&lt;/fieldset&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <fieldset>
+                        <legend>Información Personal</legend>
+                        <label for="nombre_persona">Nombre:</label>
+                        <input type="text" id="nombre_persona" name="nombre_persona">
+                        
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" name="apellidos">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <!-- RADIO BUTTONS -->
+        <div class="elemento">
+            <h2>Radio Buttons - Selección única</h2>
+            <div class="codigo">
+<span class="tag">&lt;fieldset&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;legend&gt;</span><span class="text">Género</span><span class="tag">&lt;/legend&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"radio"</span> <span class="attr-name">id</span>=<span class="attr-value">"masculino"</span> <span class="attr-name">name</span>=<span class="attr-value">"genero"</span> <span class="attr-name">value</span>=<span class="attr-value">"M"</span><span class="tag">&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"masculino"</span><span class="tag">&gt;</span><span class="text">Masculino</span><span class="tag">&lt;/label&gt;</span><br>
+<br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"radio"</span> <span class="attr-name">id</span>=<span class="attr-value">"femenino"</span> <span class="attr-name">name</span>=<span class="attr-value">"genero"</span> <span class="attr-name">value</span>=<span class="attr-value">"F"</span><span class="tag">&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"femenino"</span><span class="tag">&gt;</span><span class="text">Femenino</span><span class="tag">&lt;/label&gt;</span><br>
+<br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"radio"</span> <span class="attr-name">id</span>=<span class="attr-value">"otro"</span> <span class="attr-name">name</span>=<span class="attr-value">"genero"</span> <span class="attr-name">value</span>=<span class="attr-value">"O"</span> <span class="attr-name">checked</span><span class="tag">&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"otro"</span><span class="tag">&gt;</span><span class="text">Otro</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;/fieldset&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <fieldset>
+                        <legend>Género</legend>
+                        <div class="radio-group">
+                            <input type="radio" id="masculino" name="genero" value="M">
+                            <label for="masculino">Masculino</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="femenino" name="genero" value="F">
+                            <label for="femenino">Femenino</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="otro" name="genero" value="O" checked>
+                            <label for="otro">Otro</label>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <!-- CHECKBOXES -->
+        <div class="elemento">
+            <h2>Checkboxes - Selección múltiple</h2>
+            <div class="codigo">
+<span class="tag">&lt;fieldset&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;legend&gt;</span><span class="text">Aficiones</span><span class="tag">&lt;/legend&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"checkbox"</span> <span class="attr-name">id</span>=<span class="attr-value">"lectura"</span> <span class="attr-name">name</span>=<span class="attr-value">"aficiones"</span> <span class="attr-name">value</span>=<span class="attr-value">"lectura"</span> <span class="attr-name">checked</span><span class="tag">&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"lectura"</span><span class="tag">&gt;</span><span class="text">Lectura</span><span class="tag">&lt;/label&gt;</span><br>
+<br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"checkbox"</span> <span class="attr-name">id</span>=<span class="attr-value">"deporte"</span> <span class="attr-name">name</span>=<span class="attr-value">"aficiones"</span> <span class="attr-name">value</span>=<span class="attr-value">"deporte"</span><span class="tag">&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"deporte"</span><span class="tag">&gt;</span><span class="text">Deporte</span><span class="tag">&lt;/label&gt;</span><br>
+<br>
+<span class="indent"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"checkbox"</span> <span class="attr-name">id</span>=<span class="attr-value">"musica"</span> <span class="attr-name">name</span>=<span class="attr-value">"aficiones"</span> <span class="attr-name">value</span>=<span class="attr-value">"musica"</span> <span class="attr-name">checked</span><span class="tag">&gt;</span><br>
+<span class="indent"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"musica"</span><span class="tag">&gt;</span><span class="text">Música</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;/fieldset&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form>
+                    <fieldset>
+                        <legend>Aficiones</legend>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="lectura" name="aficiones" value="lectura" checked>
+                            <label for="lectura">Lectura</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="deporte" name="aficiones" value="deporte">
+                            <label for="deporte">Deporte</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="musica" name="aficiones" value="musica" checked>
+                            <label for="musica">Música</label>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <!-- FORMULARIO COMPLETO -->
+        <div class="elemento">
+            <h2>📝 Ejemplo de Formulario Completo</h2>
+            <div class="codigo">
+<span class="tag">&lt;form</span> <span class="attr-name">action</span>=<span class="attr-value">"/registro"</span> <span class="attr-name">method</span>=<span class="attr-value">"post"</span><span class="tag">&gt;</span><br>
+<span class="indent2"></span><span class="tag">&lt;legend&gt;</span><span class="text">Registro de Usuario</span><span class="tag">&lt;/legend&gt;</span><br>
+<br>        
+<span class="indent2"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"usuario"</span><span class="tag">&gt;</span><span class="text">Usuario:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="indent2"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"text"</span> <span class="attr-name">id</span>=<span class="attr-value">"usuario"</span> <span class="attr-name">name</span>=<span class="attr-value">"usuario"</span> <span class="attr-name">required</span><span class="tag">&gt;</span><br>
+<br>        
+<span class="indent2"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"email_completo"</span><span class="tag">&gt;</span><span class="text">Email:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="indent2"></span><span class="tag">&lt;input</span> <span class="attr-name">type</span>=<span class="attr-value">"email"</span> <span class="attr-name">id</span>=<span class="attr-value">"email_completo"</span> <span class="attr-name">name</span>=<span class="attr-value">"email"</span> <span class="attr-name">required</span><span class="tag">&gt;</span><br>
+<br>        
+<span class="indent2"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"bio"</span><span class="tag">&gt;</span><span class="text">Biografía:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="indent2"></span><span class="tag">&lt;textarea</span> <span class="attr-name">id</span>=<span class="attr-value">"bio"</span> <span class="attr-name">name</span>=<span class="attr-value">"bio"</span> <span class="attr-name">rows</span>=<span class="attr-value">"3"</span><span class="tag">&gt;&lt;/textarea&gt;</span><br>
+<br>        
+<span class="indent2"></span><span class="tag">&lt;label</span> <span class="attr-name">for</span>=<span class="attr-value">"pais_completo"</span><span class="tag">&gt;</span><span class="text">País:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="indent2"></span><span class="tag">&lt;select</span> <span class="attr-name">id</span>=<span class="attr-value">"pais_completo"</span> <span class="attr-name">name</span>=<span class="attr-value">"pais"</span> <span class="attr-name">required</span><span class="tag">&gt;</span><br>
+<span class="indent3"></span><span class="tag">&lt;option</span> <span class="attr-name">value</span>=<span class="attr-value">""</span><span class="tag">&gt;</span><span class="text">Selecciona...</span><span class="tag">&lt;/option&gt;</span><br>
+<span class="indent3"></span><span class="tag">&lt;option</span> <span class="attr-name">value</span>=<span class="attr-value">"es"</span><span class="tag">&gt;</span><span class="text">España</span><span class="tag">&lt;/option&gt;</span><br>
+<span class="indent3"></span><span class="tag">&lt;option</span> <span class="attr-name">value</span>=<span class="attr-value">"mx"</span><span class="tag">&gt;</span><span class="text">México</span><span class="tag">&lt;/option&gt;</span><br>
+<span class="indent2"></span><span class="tag">&lt;/select&gt;</span><br>
+<br>        
+<span class="indent2"></span><span class="tag">&lt;button</span> <span class="attr-name">type</span>=<span class="attr-value">"submit"</span><span class="tag">&gt;</span><span class="text">Registrarse</span><span class="tag">&lt;/button&gt;</span><br>
+<span class="indent2"></span><span class="tag">&lt;button</span> <span class="attr-name">type</span>=<span class="attr-value">"reset"</span><span class="tag">&gt;</span><span class="text">Limpiar</span><span class="tag">&lt;/button&gt;</span><br>
+<span class="tag">&lt;/form&gt;</span>
+            </div>
+            <div class="resultado">
+                <strong>Resultado:</strong>
+                <form action="/registro" method="post">
+                        <legend>Registro de Usuario</legend>
+                        
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" id="usuario" name="usuario" required>
+                        
+                        <label for="email_completo">Email:</label>
+                        <input type="email" id="email_completo" name="email" required>
+                        
+                        <label for="bio">Biografía:</label>
+                        <textarea id="bio" name="bio" rows="3"></textarea>
+                        
+                        <label for="pais_completo">País:</label>
+                        <select id="pais_completo" name="pais" required>
+                            <option value="">Selecciona...</option>
+                            <option value="es">España</option>
+                            <option value="mx">México</option>
+                        </select>
+                        
+                        <button type="submit">Registrarse</button>
+                        <button type="reset">Limpiar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
